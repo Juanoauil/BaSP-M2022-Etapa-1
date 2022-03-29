@@ -1,4 +1,4 @@
-# Semana 1 - HTML of Trackgenix Landing Page
+# Semana 2 - HTML of Trackgenix Landing Page
 
 This is the landing page of Trackgenix
 
