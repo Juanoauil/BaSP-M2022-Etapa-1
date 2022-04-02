@@ -152,27 +152,17 @@ aside p {
 }
 .functions {
     border-top: 3px solid #C4C4C4;
-    height: 1000px;
     margin: auto;
     margin-top: 150px;
+    padding-bottom: 100px;
     position: relative;
     width: 95%;
+    border-bottom: 3px solid #C4C4C4;
 }
 .functions h2 {
     padding: 50px 0 50px 40px;
 }
 .functions div {
-    width: 40%;
-}
-.timekeeping {
-    float: left;
-}
-.resource {
-    float: right;
-}
-.report {
-    float: left;
-}
-.multiple {
-    float: right;
+    width: 45%;
+    display: inline-block;
 }
