@@ -72,6 +72,7 @@ aside .aside-title {
     border-bottom: 4px solid #AACE9B;
     margin-bottom: 10px;
     margin-right: 20px;
+    margin-top: 30px;
 }
 aside ul li {
     padding-left: 30px;
@@ -158,17 +159,17 @@ aside p {
     width: 95%;
     border-bottom: 3px solid #C4C4C4;
 }
-.functions {
-    border-top: 3px solid #C4C4C4;
-}
-.functions h2 {
-    margin: 50px 900px 50px 40px;
+.layer h2 {
+    margin: 50px 600px 50px 40px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 42px;
     line-height: 74px;
     border-bottom: 6px solid #AACE9B;
+}
+.functions {
+    border-top: 3px solid #C4C4C4;
 }
 .functions div {
     width: 45%;
@@ -200,15 +201,6 @@ aside p {
 .assets {
     margin-top: 0;
     height: 1200px;
-}
-.assets h2 {
-    margin: 50px 900px 50px 40px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 42px;
-    line-height: 74px;
-    border-bottom: 6px solid #AACE9B;
 }
 .assets div {
     width: 48%;
@@ -249,4 +241,54 @@ aside p {
 }
 .assets button:hover {
     background-color: #49A37B;
+}
+.form {
+    margin-top: 0;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.form input {
+    width: 45%;
+    padding: 7px;
+    margin: 0px 5px 25px;
+    display: inline;
+}
+.form select {
+    width: 91%;
+    padding: 7px;
+    margin: 0px 5px 25px;
+    color: #373867;
+    cursor: pointer;
+}
+.form textarea {
+    width: 91%;
+    height: 210px;
+    padding: 7px;
+    margin: 0px 5px 25px;
+    resize: none;
+}
+.form button {
+    background-color: #AACE9B;
+    color: #000;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    border: none;
+    padding: 6px 25px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.form .btn-reset {
+    background-color: #fff;
+    border: 2px solid #AACE9B;
+    margin: 0 30px;
+}
+.form button:hover {
+    background-color: #49A37B;
+}
+.form .btn-reset:hover {
+    background-color: #C4C4C4;
 }
