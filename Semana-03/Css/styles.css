@@ -28,7 +28,7 @@ header nav ul li{
     font-weight: 400;
     font-size: 20px;
     letter-spacing: 0.8px;
-    padding-right: 79px;
+    padding-right: 50px;
     text-transform: uppercase;
     color: #000;
 }
@@ -62,7 +62,7 @@ aside form input {
     top: 30px;
     cursor: pointer;
 }
-aside h3 {
+aside .aside-title {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -75,6 +75,7 @@ aside h3 {
 }
 aside ul li {
     padding-left: 30px;
+    padding-top: 10px;
 }
 aside ul li a {
     font-family: 'Roboto';
@@ -82,6 +83,7 @@ aside ul li a {
     font-weight: 300;
     font-size: 18px;
     text-transform: uppercase;
+    color: #000;
 }
 aside .link:hover {
     color: #979797;
@@ -95,17 +97,14 @@ aside p {
     font-style: normal;
     font-weight: 300;
 }
-aside ul div {
-    width: 100%;
-    margin: 40px 0px;
-}
-aside ul div li {
+.italic {
     font-size: 12px;
-    vertical-align: auto;
     text-align: left;
     font-style: italic;
+    margin-top: 30px;
+    padding-left: 10px;
 }
-aside ul div img {
+.italic img {
     float: left;
     padding: 0px 10px;
 }
@@ -150,4 +149,30 @@ aside ul div img {
     padding: 13px 60px;
     margin-left: 140px;
     cursor: pointer;
+}
+.functions {
+    border-top: 3px solid #C4C4C4;
+    height: 1000px;
+    margin: auto;
+    margin-top: 150px;
+    position: relative;
+    width: 95%;
+}
+.functions h2 {
+    padding: 50px 0 50px 40px;
+}
+.functions div {
+    width: 40%;
+}
+.timekeeping {
+    float: left;
+}
+.resource {
+    float: right;
+}
+.report {
+    float: left;
+}
+.multiple {
+    float: right;
 }

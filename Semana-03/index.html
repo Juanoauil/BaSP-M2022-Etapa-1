@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="Css/reset.css" type="text/css">
-        <link rel="stylesheet" href="Css/styles.css" type="text/css">
+        <link rel="stylesheet" href="Css/styles.css" type="text/css"> 
         <title>TrackGenix</title>
     </head>
     <body>
@@ -29,31 +29,22 @@
                 <input type="text" name="search" placeholder="Search">
                 <button type="button"><img src="Images/search.png" alt="icon of search" class="search"></button>
             </form>
-            <h3>Menu</h3>
+            <p class="aside-title">Menu</p>
             <ul>
                 <li><a href="#" class="link">Homepage</a></li>
                 <li><a href="#" class="link">Generic</a></li>
                 <li><a href="#" class="link">Submenu</a></li>
             </ul>
-            <h3>Get in Touch</h3>
+            <p class="aside-title">Get in Touch</p>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Leo, venenatis volutpat fusce vitae, in suspendisse proin massa.
                 Mattis nulla libero nibh eu nisl sed.
             </p>
-            <ul>
-                <div>
-                    <img src="Images/message.png" alt="icon of message">
-                    <li>information@untitled.tld</li>
-                </div>
-                <div>
-                    <img src="Images/phone.png" alt="icon of phone">
-                    <li>(000) 0000 00000</li>
-                </div>
-                <div>
-                    <img src="Images/home.png" alt="icon of home">
-                    <li>1234 Somewhere Road #8254 Nashville, TN 00000-0000</li>
-                </div>
+            <ul class="list">
+                <li class="italic"><img src="Images/message.png" alt="icon of message">information@untitled.tld</li>
+                <li class="italic"><img src="Images/phone.png" alt="icon of phone">(000) 0000 00000</li>
+                <li class="italic"><img src="Images/home.png" alt="icon of home">1234 Somewhere Road #8254 Nashville, TN 00000-0000</li>
             </ul>
         </aside>
         <main class="container">
@@ -71,38 +62,46 @@
             </section>
             <section class="functions">
                 <h2>Functions</h2>
-                <img src="Images/timekeeping.png" alt="icon of Timekeeping">
-                <h3>Timekeeping</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Leo, venenatis volutpat fusce vitae, in suspendisse proin massa.
-                    Mattis nulla libero nibh eu nisl sed. 
-                </p>
-                <img src="Images/resource.png" alt="icon of Resource management">
-                <h3>Resource management</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Leo, venenatis volutpat fusce vitae, in suspendisse proin massa.
-                    Mattis nulla libero nibh eu nisl sed. 
-                </p>
-                <img src="Images/report.png" alt="icon of Reports">
-                <h3>Reports</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Leo, venenatis volutpat fusce vitae, in suspendisse proin massa.
-                    Mattis nulla libero nibh eu nisl sed. 
-                </p>
-                <img src="Images/roles.png" alt="icon of Multiple roles">
-                <h3>Multiple roles</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Leo, venenatis volutpat fusce vitae, in suspendisse proin massa.
-                    Mattis nulla libero nibh eu nisl sed. 
-                </p>
+                <div class="timekeeping">
+                    <img src="Images/timekeeping.png" alt="icon of Timekeeping">
+                    <h3>Timekeeping</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Leo, venenatis volutpat fusce vitae, in suspendisse proin massa.
+                        Mattis nulla libero nibh eu nisl sed.
+                    </p>
+                </div>
+                <div class="resource">
+                    <img src="Images/resource.png" alt="icon of Resource management">
+                    <h3>Resource management</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Leo, venenatis volutpat fusce vitae, in suspendisse proin massa.
+                        Mattis nulla libero nibh eu nisl sed.
+                    </p>
+                </div>
+                <div class="report">
+                    <img src="Images/report.png" alt="icon of Reports">
+                    <h3>Reports</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Leo, venenatis volutpat fusce vitae, in suspendisse proin massa.
+                        Mattis nulla libero nibh eu nisl sed.
+                    </p>
+                </div>
+                <div class="multiple">
+                    <img src="Images/roles.png" alt="icon of Multiple roles">
+                    <h3>Multiple roles</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Leo, venenatis volutpat fusce vitae, in suspendisse proin massa.
+                        Mattis nulla libero nibh eu nisl sed.
+                    </p>
+                </div>
             </section>
             <section class="assets">
                 <h2>Assets</h2>
-                <div>
+                <div class="">
                     <img src="Images/traceability.jpg" alt="A woman next to a whiteboard">
                     <h3>Traceability</h3>
                     <p>
@@ -112,7 +111,7 @@
                     </p>
                     <button type="button">More</button>
                 </div>
-                <div>
+                <div class="">
                     <img src="Images/equipment.jpg" alt="Team greeting">
                     <h3>Equipment management</h3>
                     <p>
@@ -121,7 +120,7 @@
                         Mattis nulla libero nibh eu nisl sed.
                     </p>
                     <button type="button">More</button>
-                <div>
+                <div class="">
                     <img src="Images/desicion.jpg" alt="Team work">
                     <h3>Desicion making</h3>
                     <p>
@@ -131,7 +130,7 @@
                     </p>
                     <button type="button">More</button>
                 </div>
-                <div>
+                <div class="">
                     <img src="Images/efficiency.jpg" alt="Screen showing a graphic">
                     <h3>Efficiency</h3>
                     <p>
