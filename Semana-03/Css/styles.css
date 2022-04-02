@@ -2,6 +2,9 @@
     width: 85%;
     float: right;
 }
+a {
+    text-decoration: none;
+}
 header {
     background-color: #AACE9B;
     position: relative;
@@ -185,7 +188,7 @@ aside p {
 }
 .div-functions img {
     float: left;
-    width: 20%;
+    width: 15%;
     padding-right: 40px;
     padding-top: 50px;
 }
