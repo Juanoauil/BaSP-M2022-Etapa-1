@@ -306,14 +306,6 @@ aside p {
 .form .btn-reset:hover {
     background-color: #f4f4f4;
 }
-footer {
-    position: relative;
-    background-image: url(/Semana-03/Images/footer.png);
-    height: 480px;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 .about-us{
     height: 650px;
 }
@@ -362,6 +354,14 @@ footer {
 }
 .products ol li a:hover {
     color: #979797;
+}
+footer {
+    position: relative;
+    background-image: url(/Semana-03/Images/footer.png);
+    height: 480px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 footer div {
     position: absolute;
