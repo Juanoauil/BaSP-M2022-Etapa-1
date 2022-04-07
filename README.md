@@ -9,3 +9,7 @@ This repository is intended to solve the challenge nº 2 of BaSP M2022 course. T
 ## Week 3 - CSS of Trackgenix Landing Page
 
 This week we are going to add css to the landing page of Trackgenix for desktop. The main idea is that it remains the same as in Figma.
+
+## Week 4 - CSS of Trackgenix with Flex
+
+This week we'll learn the philosophy of 'Mobile First' and we'll use display flex. Based on the design that we have done in Figma, we have to develop the css of the landing page of Trackgenix again, starting with the size of a mobile, going through the size of a tablet, and ending with the size of a desktop.

@@ -1,0 +1,25 @@
+body {
+    font-family: 'Roboto';
+}
+header {
+    background-color: #AACE9B;
+}
+aside {
+    background-color: #EDEDED;
+}
+button {
+    border: 0.2rem solid #AACE9B;
+    padding: 0.4rem 1rem;
+    border-radius: 0.8rem;
+    text-transform: uppercase;
+    background-color: #fff;
+}
+a {
+    color: #000;
+}
+li{
+    list-style: none;
+}
+.layer {
+    width: 90vh;
+}
