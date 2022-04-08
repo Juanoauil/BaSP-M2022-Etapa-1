@@ -1,0 +1,26 @@
+header {
+    width: 100vw;
+}
+
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    height: 3rem;
+}
+
+.header h1{
+    font-family: Righteous;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+.header nav{
+    display: none;
+}
+
+.header img{
+    height: 20px;
+}

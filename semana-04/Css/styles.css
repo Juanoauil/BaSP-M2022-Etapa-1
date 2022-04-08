@@ -1,25 +1,49 @@
+
+
 body {
     font-family: 'Roboto';
+    width: 100vw;
+    /* overflow-x: hidden; */
+    letter-spacing: 0.05em;
 }
+
 header {
     background-color: #AACE9B;
 }
+
 aside {
     background-color: #EDEDED;
 }
-button {
-    border: 0.2rem solid #AACE9B;
-    padding: 0.4rem 1rem;
-    border-radius: 0.8rem;
-    text-transform: uppercase;
-    background-color: #fff;
+
+.flex-img img, .about img, .assets img{
+    width: 100%;
+    height: auto;
 }
-a {
+
+.container{
+    width: 90vw;
+    margin: auto;
+}
+
+.main, .main-about, .main-assets, .main-form, .main-func, .main-our{
+    margin: 2rem 0;
+}
+
+a{
     color: #000;
 }
-li{
-    list-style: none;
+
+.main, .main-func, .main-assets, .main-form, .main-about, .main-our{
+    border-bottom: 2px solid #c4c4c4c4;
 }
-.layer {
-    width: 90vh;
+
+h2{
+    padding-bottom: 3px;
+    text-decoration: underline #AACE9B;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+button{
+    text-transform: uppercase;
 }

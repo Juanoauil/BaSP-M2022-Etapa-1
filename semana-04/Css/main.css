@@ -1,0 +1,139 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.text-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.text-main h2{
+    font-size: 2.5rem;
+    line-height: 3rem;
+    text-decoration: none;
+}
+
+.text-main p{
+    line-height: 1.5rem;
+    font-weight: 400;
+    margin: 1rem 0;
+}
+
+.flex-img{
+    border-radius: 0;
+    margin: 2rem 0;
+}
+
+.main button{
+    border: 3px solid #AACE9B;
+    border-radius: 15px;
+    padding: 0.5rem 1.2rem;
+    background-color: #fff;
+    margin-bottom: 2rem;
+}
+
+.functions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.functions .flex-func{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.flex-func h3{
+    margin: 0.6rem 0;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.flex-func p{
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
+
+.flex-func img{
+    max-height: 100px;
+    width: auto;
+}
+
+.assets{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.assets .flex-assets{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.assets img{
+    margin-top: 2rem;
+    border-radius: 1rem;
+}
+
+
+.assets h3{
+    margin: 0.6rem 0;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.assets p{
+    font-size: 1rem;
+    line-height: 1.2rem;
+    margin: 1rem 0;
+}
+
+.assets button{
+    background-color: #AACE9B;
+    color: #000;
+    border-radius: 0.8rem;
+    padding: 0.4rem 1.2rem;
+    border: none;
+    margin-bottom: 1rem;
+}
+
+.main-form form{
+    margin: 1rem 0;
+}
+
+.main-form input{
+    width: 90%;
+    padding: 0.3rem;
+    margin: 0.8rem auto;
+}
+
+.main-form select{
+    width: 90%;
+    padding: 0.3rem;
+    margin: 0.8rem auto;
+}
+
+.main-form textarea{
+    width: 90%;
+    height: 10rem;
+    padding: 0.3rem;
+    margin: 0.8rem auto;
+    resize: none;
+}
