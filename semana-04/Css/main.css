@@ -22,6 +22,7 @@
     line-height: 1.5rem;
     font-weight: 400;
     margin: 1rem 0;
+    max-width: 500px;
 }
 
 .flex-img{
@@ -40,7 +41,7 @@
 .functions{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -73,7 +74,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -106,34 +107,98 @@
 }
 
 .assets button{
+    padding: 0.4rem 1.2rem;
+    border: none;
     background-color: #AACE9B;
     color: #000;
     border-radius: 0.8rem;
-    padding: 0.4rem 1.2rem;
-    border: none;
     margin-bottom: 1rem;
 }
 
 .main-form form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 1rem 0;
 }
 
-.main-form input{
+.main-form input, .main-form select, .main-form textarea{
     width: 90%;
-    padding: 0.3rem;
+    padding: 0.3rem 0.4rem;
     margin: 0.8rem auto;
-}
-
-.main-form select{
-    width: 90%;
-    padding: 0.3rem;
-    margin: 0.8rem auto;
+    border-radius: 0.8rem;
+    border: .5px solid #c4c4c4;
 }
 
 .main-form textarea{
-    width: 90%;
     height: 10rem;
-    padding: 0.3rem;
-    margin: 0.8rem auto;
     resize: none;
+}
+
+.flex-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 6rem;
+    margin-bottom: 2rem;
+}
+
+.flex-buttons button{
+    padding: 0.4rem 1.2rem;
+    background-color: #AACE9B;
+    color: #000;
+    border-radius: 8px;
+    border: 0.2rem solid #AACE9B;
+    
+}
+
+.flex-buttons button:last-child{
+    background-color: #fff;
+    color: #000;
+}
+
+.main-about h2{
+    margin-bottom: 0;
+}
+
+.about{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.text-about p{
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.8rem;
+    margin-bottom: 1rem;
+    max-width: 548px;
+}
+
+.about img{
+    border-radius: 15px;
+}
+
+.main-our .our{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.text-our h4{
+    text-decoration: underline #AACE9B;
+    font-weight: 500;
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.text-our li{
+    font-weight: 300;
+    font-size: 1.4rem;
 }
