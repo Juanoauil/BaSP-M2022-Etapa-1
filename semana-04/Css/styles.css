@@ -1,8 +1,9 @@
 body {
     font-family: 'Roboto';
-    width: 100vw;
+    width: 100%;
     /* overflow-x: hidden; */
     letter-spacing: 0.05em;
+    display: flex;
 }
 
 header {
@@ -20,7 +21,7 @@ aside {
 }
 
 .container{
-    width: 90vw;
+    width: 90%;
     margin: auto;
 }
 
@@ -28,12 +29,12 @@ aside {
     margin: 2rem 0;
 }
 
-a{
-    color: #000;
-}
-
 .main, .main-func, .main-assets, .main-form, .main-about, .main-our{
     border-bottom: 2px solid #c4c4c4c4;
+}
+
+a{
+    color: #000;
 }
 
 h2{
