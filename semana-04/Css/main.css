@@ -4,83 +4,72 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
 }
-
 .text-main{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
 }
-
 .text-main h2{
     text-align: center;
     font-size: 2.5rem;
     line-height: 3rem;
     text-decoration: none;
 }
-
 .text-main p{
-    line-height: 1.5rem;
-    font-weight: 400;
     margin: 1rem 0;
     max-width: 500px;
+    line-height: 1.5rem;
+    font-weight: 400;
 }
-
+.main button{
+    align-self: center;
+    width: 35%;
+    padding: 0.5rem 1.2rem;
+    margin-bottom: 2rem;
+    border: 3px solid #AACE9B;
+    border-radius: 15px;
+    background-color: #fff;
+}
+.main button:hover{
+    background-color: #F0F0F0;
+}
 .flex-img{
-    border-radius: 0;
     margin: 2rem 0;
-    
     max-width: max-content;
     min-width: 50%;
     width: 85%;
     height: auto;
+    border-radius: 0;
 }
-
-.main button{
-    border-radius: 15px;
-    padding: 0.5rem 1.2rem;
-    margin-bottom: 2rem;
-    width: 35%;
-    align-self: center;
-    border: 3px solid #AACE9B;
-    background-color: #fff;
-}
-
 .functions{
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
 }
-
 .functions .box-func{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    text-align: center;
     margin: 2rem 0;
+    text-align: center;
 }
-
-.box-func h3{
-    margin: 0.6rem 0;
-    font-weight: 500;
-    font-size: 1.5rem;
-}
-
-.box-func p{
-    font-size: 1rem;
-    line-height: 1.2rem;
-}
-
 .box-func img{
     max-height: 100px;
     width: auto;
     margin-right: 2rem;
 }
-
+.box-func h3{
+    margin: 0.6rem 0;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+.box-func p{
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
 .assets{
     display: flex;
     flex-direction: row;
@@ -88,48 +77,45 @@
     justify-content: center;
     align-items: center;
 }
-
 .assets .flex-assets{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
-
 .assets img{
     margin-top: 2rem;
     border-radius: 1rem;
 }
-
 .assets h3{
     margin: 0.6rem 0;
     font-weight: 500;
     font-size: 1.5rem;
 }
-
 .assets p{
     font-size: 1rem;
     line-height: 1.2rem;
     margin: 1rem 0;
 }
-
 .assets button{
     padding: 0.4rem 1.2rem;
-    border: none;
-    background-color: #AACE9B;
-    color: #000;
     border-radius: 0.8rem;
     margin-bottom: 1rem;
+    color: #000;
+    border: none;
+    background-color: #AACE9B;
 }
-
+.assets button:hover{
+    background-color: #809B75;
+}
 .main-form form{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     margin: 1rem 0;
 }
-
 .main-form input, .main-form select, .main-form textarea{
     width: 90%;
     padding: 0.3rem 0.4rem;
@@ -137,12 +123,10 @@
     border-radius: 0.2rem;
     border: .5px solid #c4c4c4;
 }
-
 .main-form textarea{
     height: 10rem;
     resize: none;
 }
-
 .flex-buttons{
     display: flex;
     flex-direction: column;
@@ -151,25 +135,28 @@
     height: 6rem;
     margin-bottom: 2rem;
 }
-
 .flex-buttons button{
     padding: 0.4rem 1.2rem;
+    color: #000;
     background-color: #AACE9B;
-    color: #000;
     border-radius: 8px;
-    border: 0.2rem solid #AACE9B;
-    
+    border: 0rem solid #AACE9B;
 }
-
-.flex-buttons button:last-child{
+.flex-buttons button:hover{
+    background-color: #809B75;
+}
+.flex-buttons .btn-reset{
     background-color: #fff;
-    color: #000;
+    padding: 0.4rem 1.2rem;
+    border-radius: 8px;
+    outline: 0.1rem solid #AACE9B;
 }
-
+.flex-buttons .btn-reset:hover{
+    background-color: #F0F0F0;
+}
 .main-about h2{
     margin-bottom: 0;
 }
-
 .about{
     display: flex;
     flex-wrap: wrap;
@@ -178,20 +165,17 @@
     margin: 1rem 0;
     text-align: center;
 }
-
 .text-about p{
+    margin-bottom: 1rem;
+    max-width: 548px;
     font-weight: 700;
     font-size: 1rem;
     line-height: 1.8rem;
-    margin-bottom: 1rem;
-    max-width: 548px;
 }
-
 .about img{
-    border-radius: 15px;
     margin-left: 1rem;
+    border-radius: 15px;
 }
-
 .main-our .our{
     display: flex;
     flex-direction: column;
@@ -199,17 +183,18 @@
     align-items: center;
     margin-bottom: 1rem;
 }
-
 .text-our h4{
     text-decoration: underline #AACE9B;
     font-weight: 500;
     font-size: 2rem;
     margin: 1rem 0;
 }
-
 .text-our li{
     font-weight: 300;
     font-size: 1.4rem;
+}
+.text-our a:hover{
+    color: #999;
 }
 
 @media (min-width: 768px) {
@@ -217,41 +202,32 @@
         flex-direction: row;
         flex-wrap: nowrap;
     }
-
     .main button{
         min-width: 176.01px;
     }
-
     .functions .box-func{
     flex-direction: row;
     text-align: left;
     }
-
     .main-form input{
         width: 45%;
     }
-
     .main-form select, .main-form textarea{
         width: 96%;
     }
-
     .flex-buttons{
         flex-direction: row;
         justify-content: center;
     }
-
     .flex-buttons button{
         margin: 0 1rem;
     }
-
     .about{
         flex-wrap: nowrap;
     }
-
     .about img{
         width: 40%;
     }
-
     .main-our .our{
         flex-direction: row;
     }
@@ -261,24 +237,19 @@
     .functions{
         justify-content: space-between;
     }
-
     .functions .box-func{
         width: 45%;
     }
-
     .assets{
         justify-content: space-between;
     }
-
     .assets .flex-assets{
         width: 45%;
     }
-
     .flex-assets button{
         align-self: flex-start;
         margin-top: 0.6rem;
     }
-
     .vertical-line{
         width: 2px;
         height: 450px;
