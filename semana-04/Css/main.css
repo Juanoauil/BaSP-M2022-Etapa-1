@@ -118,6 +118,7 @@
     margin: 1rem 0;
 }
 .main-form input, .main-form select, .main-form textarea{
+    box-sizing: border-box;
     width: 90%;
     padding: 0.3rem 0.4rem;
     margin: 0.8rem auto;
@@ -214,11 +215,11 @@
         min-width: 178px;
     }
     .functions .box-func{
-    flex-direction: row;
-    text-align: left;
+        flex-direction: row;
+        text-align: left;
     }
     .main-form input{
-        width: 45%;
+        width: 46%;
     }
     .main-form select, .main-form textarea{
         width: 96%;

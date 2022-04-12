@@ -20,8 +20,6 @@ a{
 }
 .main, .main-about, .main-assets, .main-form, .main-func, .main-our{
     margin: 2rem 0;
-}
-.main, .main-func, .main-assets, .main-form, .main-about, .main-our{
     border-bottom: 2px solid #c4c4c4;
 }
 h2{
