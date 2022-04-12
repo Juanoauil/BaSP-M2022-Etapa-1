@@ -4,9 +4,10 @@ body {
     letter-spacing: 0.05em;
     font-family: 'Roboto';
 }
-aside {
+.flex-aside {
     background-color: #EDEDED;
 }
+
 header {
     background-color: #AACE9B;
 }

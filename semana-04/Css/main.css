@@ -25,6 +25,7 @@
 .main button{
     align-self: center;
     width: 35%;
+    min-width: 150px;
     padding: 0.5rem 1.2rem;
     margin-bottom: 2rem;
     border: 3px solid #AACE9B;
@@ -196,6 +197,13 @@
 .text-our a:hover{
     color: #999;
 }
+.vertical-line{
+    display: none;
+    width: 2px;
+    height: 450px;
+    border-radius: 10px;
+    background-color: #c4c4c4;
+}
 
 @media (min-width: 768px) {
     .main{
@@ -203,7 +211,7 @@
         flex-wrap: nowrap;
     }
     .main button{
-        min-width: 176.01px;
+        min-width: 178px;
     }
     .functions .box-func{
     flex-direction: row;
@@ -251,9 +259,6 @@
         margin-top: 0.6rem;
     }
     .vertical-line{
-        width: 2px;
-        height: 450px;
-        border-radius: 10px;
-        background-color: #c4c4c4;
+        display: block;
     }
 }

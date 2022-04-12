@@ -16,6 +16,12 @@
 .header nav ul{
     display: none;
 }
+.header a{
+    text-transform: uppercase;
+}
+.header a:hover{
+    color: #666;
+}
 
 @media (min-width: 1024px) {
     nav{
@@ -25,11 +31,5 @@
         display: flex;
         justify-content: space-evenly;
         flex: 1;
-    }
-    .header a{
-        text-transform: uppercase;
-    }
-    .header a:hover{
-        color: #666;
     }
 }
