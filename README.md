@@ -17,3 +17,4 @@ This week we'll learn the philosophy of 'Mobile First' and we'll use display fle
 ## Week 5 - Basic concepts of Javascript
 
 This week we'll be working on basic concepts of Javascript: variables, strings, boolean, numbers, loops and iterations. The challenge of this week is to solve the exercises of Javascript using the logic tools previously mentioned.
+[Js Exercises](https://juanoauil.github.io/BaSP-M2022-Etapa-1/semana-05/index.html)
