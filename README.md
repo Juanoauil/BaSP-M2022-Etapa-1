@@ -13,3 +13,7 @@ This week we are going to add css to the landing page of Trackgenix for desktop.
 ## Week 4 - CSS of Trackgenix with Flex
 
 This week we'll learn the philosophy of 'Mobile First' and we'll use display flex. Based on the design that we have done in Figma, we have to develop the css of the landing page of Trackgenix again, starting with the size of a mobile, going through the size of a tablet, and ending with the size of a desktop.
+
+## Week 5 - Basic concepts of Javascript
+
+This week we'll be working on basic concepts of Javascript: variables, strings, boolean, numbers, loops and iterations. The challenge of this week is to solve the exercises of Javascript using the logic tools previously mentioned.
