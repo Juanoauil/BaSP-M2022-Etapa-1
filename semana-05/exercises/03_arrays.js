@@ -53,5 +53,3 @@ meses.sort();
 mayo = meses.indexOf("Mayo");
 noviembre = meses.indexOf("Noviembre");
 console.log(meses.slice(mayo, ++noviembre));
-
-
