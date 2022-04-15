@@ -6,9 +6,7 @@ console.log('EXERCISE 2: STRINGS');
 //a. Crear una variable de tipo string con al menos 10 caracteres y convertir todo el texto en mayúscula (utilizar toUpperCase).
 
 console.log('Exercise 2.a');
-
 var frase = 'mi nombre es juan diego';
-
 console.log(frase.toUpperCase());
 
 
@@ -16,11 +14,8 @@ console.log(frase.toUpperCase());
 //   guardando el resultado en una nueva variable (utilizar substring).
 
 console.log('Exercise 2.b');
-
 var frase2 = 'Frase con al menos 10 caracteres';
-
 subString2 = frase2.substring(0,5);
-
 console.log(subString2);
 
 
@@ -28,11 +23,8 @@ console.log(subString2);
 //   y generar un nuevo string con los últimos 3 caracteres guardando el resultado en una nueva variable (utilizar substring).
 
 console.log('Exercise 2.c');
-
 var frase3 = 'Rercer frase de prueba para generar un substring';
-
 subString3 = frase3.substring(48,45);
-
 console.log(subString3);
 
 
@@ -40,16 +32,11 @@ console.log(subString3);
 //   y las demás en minúscula. Guardar el resultado en una nueva variable (utilizar substring, toUpperCase, toLowerCase y el operador +).
 
 console.log('Exercise 2.d');
-
 var frase4 = 'frase con mayusculas y minusculas';
-
 upperFrase4 = frase4.substring(0,1);
 primerMayus = upperFrase4.toUpperCase();
-
 lowerFrase4 = frase4.substring(1,33);
-
 frase4Finale = primerMayus + lowerFrase4;
-
 console.log(frase4Finale);
 
 
@@ -57,11 +44,8 @@ console.log(frase4Finale);
 //   y guardarla en una variable (utilizar indexOf).
 
 console.log('Exercise 2.e');
-
 var frase5 = 'Frase para buscar un espacio intermedio';
-
 spaceFrase5 = frase5.indexOf(" ");
-
 console.log(spaceFrase5);
 
 
@@ -70,16 +54,12 @@ console.log(spaceFrase5);
 //   palabras en mayúscula y las demás letras en minúscula (utilizar indexOf, substring, toUpperCase, toLowerCase y el operador +).
 
 console.log('Exercise 2.f');
-
 var frase6 = 'problematica semanal';
-
-// console.log(frase6.indexOf("p"));
-// console.log(frase6.indexOf("s"));
+// console.log(frase6.indexOf("problematica"));
+// console.log(frase6.indexOf("semanal"));
 primerMayus = frase6.substring(0,1);
 segundaMayus = frase6.substring(13,14);
 restOfFrase1 = frase6.substring(1,13);
 restOfFrase2 = frase6.substring(14,20);
-
 fraseFinal = primerMayus.toUpperCase() + restOfFrase1 + segundaMayus.toUpperCase() + restOfFrase2;
-
 console.log(fraseFinal);
