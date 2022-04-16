@@ -25,7 +25,7 @@ if (number <= 0.5) {
 // “Anciano” si es mayor a 75 años.
 
 console.log('Exercise 4.b');
-var Age = Math.round(Math.random()*101);
+var Age = Math.round(Math.random() * 101);
 if (Age < 2) {
     alert("Bebe edad: " + Age);
 }else if (Age >= 2 && Age <12) {
@@ -40,4 +40,4 @@ if (Age < 2) {
     alert("Adulto mayor edad: " + Age);
 }else {
     alert("Anciano edad: " + Age);
-}
+};
