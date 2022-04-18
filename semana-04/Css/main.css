@@ -252,7 +252,7 @@
     .assets{
         justify-content: space-between;
     }
-    .assets .flex-assets{
+    .flex-assets{
         width: 45%;
     }
     .flex-assets button{

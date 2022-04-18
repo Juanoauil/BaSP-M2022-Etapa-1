@@ -4,15 +4,23 @@ body {
     letter-spacing: 0.05em;
     font-family: 'Roboto';
 }
-.flex-aside {
-    background-color: #EDEDED;
-}
-
 header {
     background-color: #AACE9B;
 }
 a{
     color: #000;
+}
+h2{
+    padding-bottom: 3px;
+    text-decoration: underline #AACE9B;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+button{
+    text-transform: uppercase;
+}
+.flex-aside {
+    background-color: #EDEDED;
 }
 .container{
     margin: auto;
@@ -22,17 +30,8 @@ a{
     margin: 2rem 0;
     border-bottom: 2px solid #c4c4c4;
 }
-h2{
-    padding-bottom: 3px;
-    text-decoration: underline #AACE9B;
-    font-weight: 500;
-    font-size: 1.5rem;
-}
 .flex-img img, .about img, .assets img{
     max-width: max-content;
     width: 100%;
     height: auto;
-}
-button{
-    text-transform: uppercase;
 }
