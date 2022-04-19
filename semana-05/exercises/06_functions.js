@@ -65,7 +65,7 @@ function suma (a, b) {
         return 'Ambos numeros tienen decimales';
     }
 };
-console.log(suma(5.1, num2));
+console.log(suma(num1, num2));
 
 
 //e. Convertir la validación del ejercicio 6d) en una función separada y llamarla dentro de la función

@@ -8,7 +8,7 @@ console.log('EXERCISE 3: ARRAYS');
 
 console.log('Exercise 3.a');
 meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-console.log(meses[5], meses[11]);
+console.log(meses[4], meses[10]);
 
 
 //b. Ordenar el array de meses alfabéticamente y mostrarlo por consola (utilizar sort).
