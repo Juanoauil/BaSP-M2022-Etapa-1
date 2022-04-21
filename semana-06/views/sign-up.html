@@ -4,11 +4,16 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../styles/reset.css" type="text/css">
         <link rel="stylesheet" href="../styles/styles.css" type="text/css">
         <link rel="stylesheet" href="../styles/header.css" type="text/css">
         <link rel="stylesheet" href="../styles/sidebar.css" type="text/css">
         <link rel="stylesheet" href="../styles/footer.css" type="text/css">
+        <link rel="stylesheet" href="../styles/sign-up.css" type="text/css">
         <title>TrackGenix || Sign Up</title>
     </head>
     <body>
@@ -23,7 +28,7 @@
                 <div class="text-sidebar">
                     <p class="title-sidebar">Menu</p>
                     <ul>
-                        <li><a href="#">Homepage</a></li>
+                        <li><a href="index.html">Homepage</a></li>
                         <li><a href="#">Generic</a></li>
                         <li><a href="#">Submenu</a></li>
                     </ul>
@@ -60,13 +65,65 @@
                     <nav>
                         <ul>
                             <li><a href="index.html">Home</a></li>
-                            <li><a href="sign-up.html">SingUp</a></li>
+                            <li><a href="sign-up.html">SignUp</a></li>
                             <li><a href="login.html">Login</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
             </header>
+            <main>
+                <div class="sign-flex">
+                    <h2>Register</h2>
+                    <form action="#">
+                        <div class="form-sign">
+                            <label for="name-sign">Nombre</label>
+                            <input type="text" name="name-sign" placeholder="Name" id="name-sign">
+                        </div>
+                        <div class="form-sign">
+                            <label for="surName-sign">Apellido</label>
+                            <input type="text" name="surName-sign" placeholder="Apellido" id="surName-sign">
+                        </div>
+                        <div class="form-sign">
+                            <label for="dni">DNI</label>
+                            <input type="number" name="dni-sign" placeholder="Documento Nacional de Identidad" id="dni">
+                        </div>
+                        <div class="form-sign">
+                            <label for="fdn-sign">Fecha de Nacimiento</label>
+                            <input type="date" name="fdn-sign" placeholder="Fecha de Nacimiento" id="fdn-sign">
+                        </div>
+                        <div class="form-sign">
+                            <label for="tel-sign">Telefono</label>
+                            <input type="tel" name="tel-sign" placeholder="Telefono" id="tel-sign">
+                        </div>
+                        <div class="form-sign">
+                            <label for="dir-sign">Direccion</label>
+                            <input type="text" name="dir-sign" placeholder="Direccion" id="dir-sign">
+                        </div>
+                        <div class="form-sign">
+                            <label for="location-sign">Localidad</label>
+                            <input type="text" name="location-sign" placeholder="Localidad" id="location-sign">
+                        </div>
+                        <div class="form-sign">
+                            <label for="cp-sign">Codigo Postal</label>
+                            <input type="number" name="cp-sign" placeholder="Codigo Postal" id="cp-sign">
+                        </div>
+                        <div class="form-sign">
+                            <label for="email-sign">Email</label>
+                            <input type="email" name="email-sign" placeholder="Email" id="email-sign">
+                        </div>
+                        <div class="form-sign">
+                            <label for="pass-sign">Contraseña</label>
+                            <input type="password" name="pass-sign" placeholder="Contraseña" id="pass-sign">
+                        </div>
+                        <div class="form-sign">
+                            <label for="repass-sign">Repetir Contraseña</label>
+                            <input type="password" name="pass-sign" placeholder="Repetir Contraseña" id="repass-sign">
+                        </div>
+                    </form>
+                    <button class="btn-sign">Sign Up</button>
+                </div>
+            </main>
             <footer>
                 <div class="social-media">
                     <a href="#"><img src="../assets/twitter.png" alt="icon of twitter"></a>

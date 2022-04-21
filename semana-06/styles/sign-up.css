@@ -10,15 +10,15 @@ main{
     background-size: cover;
     background-repeat: no-repeat;
 }
-.log-flex{
+.sign-flex{
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: 2rem;
     padding: 1rem;
     width: 50%;
-    border: .2px solid #000;
     background-color: #F6F9F4;
+    border: .2px solid #000;
     border-radius: 20px;
 }
 h2{
@@ -30,46 +30,29 @@ h2{
     text-decoration: none;
     text-align: center;
 }
-.form-log{
+.form-sign{
     display: flex;
     flex-direction: column;
     margin: 1.4rem 0;
 }
-.form-log input{
+.form-sign input{
     padding: 5px;
     margin-top: .4rem;
     border-radius: 5px;
 }
-.buttons-log{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.buttons-log button{
-    margin: .8rem 0;
-    width: 50%;
-    cursor: pointer;
-}
-.btn-log{
+.btn-sign{
     padding: 0.4rem 1.2rem;
+    width: 50%;
+    min-width: 100px;
+    margin: 1rem auto;
     border-radius: 8px;
-    margin-bottom: 1rem;
     color: #000;
     border: none;
     background-color: #AACE9B;
-}
-.btn-log:hover{
-    background-color: #809B75;
-}
-.btn-sign{
-    padding: 0.4rem 1.2rem;
-    background-color: #fff;
-    border-radius: 8px;
-    border: none;
-    outline: 0.1rem solid #AACE9B;
+    cursor: pointer;
 }
 .btn-sign:hover{
-    background-color: #F0F0F0;
+    background-color: #809B75;
 }
 footer{
     background: none;
