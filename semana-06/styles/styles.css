@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    width: 100%;
+    letter-spacing: 0.05em;
+    font-family: 'Roboto';
+}
+header {
+    background-color: #AACE9B;
+}
+a{
+    color: #000;
+}
+h2{
+    padding-bottom: 3px;
+    text-decoration: underline #AACE9B;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+button{
+    text-transform: uppercase;
+}
+.flex-aside {
+    background-color: #EDEDED;
+    flex: 2;
+    display: none;
+}
+.flex-main {
+    flex: 10;
+}
+.container{
+    margin: auto;
+    width: 90%;
+}
+.main, .main-about, .main-assets, .main-form, .main-func, .main-our{
+    margin: 2rem 0;
+    border-bottom: 2px solid #c4c4c4;
+}
+.flex-img img, .about img, .assets img{
+    max-width: max-content;
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .flex-aside {
+        display: block;
+    }
+}

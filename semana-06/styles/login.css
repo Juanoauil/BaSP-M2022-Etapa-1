@@ -1,0 +1,73 @@
+body{
+    background-color: #AACE9B;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    background-image: url(../assets/back-login.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.log-flex{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2rem;
+    padding: 1rem;
+    width: 50%;
+    border: .2px solid #000;
+    background-color: #F6F9F4;
+    border-radius: 20px;
+}
+h2{
+    font-family: Righteous;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2.2rem;
+    text-decoration: none;
+    text-align: center;
+}
+.form-log{
+    display: flex;
+    flex-direction: column;
+    margin: 1.4rem 0;
+}
+.form-log input{
+    padding: 3px;
+    margin-top: .4rem;
+    border-radius: 5px;
+}
+.buttons-log{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.buttons-log button{
+    margin: .8rem 0;
+    width: 50%;
+    cursor: pointer;
+}
+.btn-log{
+    padding: 0.4rem 1.2rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    color: #000;
+    border: none;
+    background-color: #AACE9B;
+}
+.btn-log:hover{
+    background-color: #809B75;
+}
+.btn-sign{
+    padding: 0.4rem 1.2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    border: none;
+    outline: 0.1rem solid #AACE9B;
+}
+.btn-sign:hover{
+    background-color: #F0F0F0;
+}

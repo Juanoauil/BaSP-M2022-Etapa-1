@@ -18,3 +18,12 @@ This week we'll learn the philosophy of 'Mobile First' and we'll use display fle
 
 This week we'll be working on basic concepts of Javascript: variables, strings, boolean, numbers, loops and iterations. The challenge of this week is to solve the exercises of Javascript using the logic tools previously mentioned.
 [Js Exercises](https://juanoauil.github.io/BaSP-M2022-Etapa-1/semana-05/index.html)
+
+## Week 6 - Login and SignUp responsive pages with Javascript
+
+This week we'll be working on the employee screenflow that was made in the first week.
+We have to create the html and css files that correspond to the login and the sign up. In case we have time, we'll also create the one of contact.
+We have to join these files to the index file so we can browse between the different tabs.
+For each of the new html files, we must generate a new js file that validates the data entry in the corresponding fields.
+
+[Login and SignUp Pages](https://juanoauil.github.io/BaSP-M2022-Etapa-1/semana-06/views/index.html)
