@@ -5,6 +5,8 @@ var button = document.getElementsByClassName('btn-log');
 var form = document.getElementsByTagName('form');
 var okeyMail;
 var okeyPass;
+var validate = document.getElementsByClassName('inner-span');
+var validateHide = document.getElementsByClassName('hide-cartel');
 
 mail.onfocus = function () {
     hideAlert[0].innerHTML = '';
@@ -20,7 +22,6 @@ mail.onblur = function () {
         hideAlert[0].innerHTML = '¡El formato no corresponde!';
         mail.classList.add('blur');
         okeyMail = false;
-        console.log(okeyMail);
     }
 };
 
@@ -37,13 +38,11 @@ pass.onblur = function () {
         pass.value.length > 7
     ) {
         okeyPass = true;
-        console.log(okeyPass);
         return okeyPass;
     } else {
         hideAlert[1].innerHTML = '¡Completa con numeros y letras!';
         pass.classList.add('blur');
         okeyPass = false;
-        console.log(okeyPass);
         return okeyPass;
     }
 };
@@ -51,7 +50,9 @@ pass.onblur = function () {
 form[1].addEventListener('submit', function (e) {
     e.preventDefault();
     if (okeyMail === true && okeyPass === true) {
-        console.log('succesful');
+        validateHide[0].classList.remove('hide-cartel');
+        validate[0].innerHTML = mail.value;
+        validate[1].innerHTML = pass.value;
     } else {
         alert('Los datos ingresados no corresponden');
     }
