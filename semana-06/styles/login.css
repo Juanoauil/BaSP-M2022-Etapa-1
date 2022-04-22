@@ -8,7 +8,11 @@ main{
     background-color: #fff;
     background-image: url(../assets/back-login.png);
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+}
+#login{
+    font-weight: bolder;
 }
 .log-flex{
     display: flex;
@@ -70,6 +74,18 @@ h2{
 }
 .btn-sign:hover{
     background-color: #F0F0F0;
+}
+.forgot{
+    font-size: .8rem;
+}
+.forgot:hover{
+    font-weight: 700;
+}
+.hideBlur{
+    color: #f00;
+}
+.blur{
+    border: 2px solid #f00;
 }
 footer{
     background: none;

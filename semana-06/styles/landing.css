@@ -5,6 +5,9 @@
     justify-content: center;
     align-items: center;
 }
+#home{
+    font-weight: bolder;
+}
 .text-main{
     display: flex;
     flex-direction: column;
