@@ -30,60 +30,44 @@ function myBlur(x, i) {
         x.classList.add('correct');
     }
 }
+
+function validateMail(x) {
+    var regexMail = /[a-z0-9]+@[a-z]+.[a-z]{2,3}/;
+    if (regexMail.test(x.value)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+function validatePass(x) {
+    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    var num = 0;
+    var char = 0;
+    for (i = 0; i < x.value.length; i++) {
+        if (numbers.includes(x.value[i])) {
+            num++;
+        } else {
+            char++;
+        }
+    }
+    if (x.value.length >= 8 && num >= 1 && char >= 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 form[1].onsubmit = function (e) {
     e.preventDefault();
-    var condicion1 = true;
-    var condicion2 = true;
-    var regexMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (regexMail.test(mail.value)) {
-        return condicion1;
+    if (validateMail(mail) == true && validatePass(pass) == true) {
+        validateForm[0].classList.remove('hide-cartel');
+        validateValue[0].innerHTML = mail.value;
+        validateValue[1].innerHTML = pass.value;
+    } else if (validateMail(mail) == false && validatePass(pass) == true) {
+        alert('¡El email ingresado no corresponde a un formato valido');
+    } else if (validateMail(mail) == true && validatePass(pass) == false) {
+        alert('La contraseña ingresada no corresponde a un formato valido');
+    } else {
+        alert('¡Los datos ingresados no tienen el formato indicado');
     }
 };
-// mail.onfocus = function () {
-//     hideAlert[0].innerHTML = '';
-//     mail.classList.remove('blur');
-// };
-// mail.onblur = function () {
-//     var regexMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-//     if (regexMail.test(mail.value)) {
-//         okeyMail = true;
-//         return okeyMail;
-//     } else {
-//         hideAlert[0].innerHTML = '¡El formato no corresponde!';
-//         mail.classList.add('blur');
-//         okeyMail = false;
-//     }
-// };
-
-// pass.onfocus = function () {
-//     hideAlert[1].innerHTML = '';
-//     pass.classList.remove('blur');
-// };
-// pass.onblur = function () {
-//     var numbers = /[0-9]/;
-//     var letters = /[a-z]/;
-//     if (
-//         pass.value.match(numbers) &&
-//         pass.value.match(letters) &&
-//         pass.value.length > 7
-//     ) {
-//         okeyPass = true;
-//         return okeyPass;
-//     } else {
-//         hideAlert[1].innerHTML = '¡Completa con numeros y letras!';
-//         pass.classList.add('blur');
-//         okeyPass = false;
-//         return okeyPass;
-//     }
-// };
-
-// form[1].addEventListener('submit', function (e) {
-//     e.preventDefault();
-//     if (okeyMail === true && okeyPass === true) {
-//         validateHide[0].classList.remove('hide-cartel');
-//         validate[0].innerHTML = mail.value;
-//         validate[1].innerHTML = pass.value;
-//     } else {
-//         alert('Los datos ingresados no corresponden');
-//     }
-// });
