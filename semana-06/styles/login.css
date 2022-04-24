@@ -84,11 +84,18 @@ h2{
 .forgot:hover{
     font-weight: 700;
 }
-.hideBlur{
+.error-text{
     color: #f00;
+    visibility: hidden;
+}
+.error{
+    visibility: visible;
 }
 .blur{
     border: 2px solid #f00;
+}
+.correct{
+    border: 2px solid #3BBA6C;
 }
 .hide-cartel{
     display: none;

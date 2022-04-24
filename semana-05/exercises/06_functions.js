@@ -7,10 +7,10 @@ console.log('EXERCISE 6: FUNCTIONS');
 console.log('Exercise 6.a');
 num1 = Math.floor(Math.random() * 50);
 num2 = Math.floor(Math.random() * 50);
-function suma(a, b) {
+var suma = function (a, b) {
     resultado = a + b;
     return resultado;
-}
+};
 console.log(suma(num1, num2), 'numero 1:', num1, 'numero 2:', num2);
 
 //b. A la función suma anterior, agregarle una validación para controlar si alguno de los parámetros no es un número,
@@ -34,9 +34,7 @@ console.log('Exercise 6.c');
 a = 15;
 function validateIntenger(a) {
     if (Number.isInteger(a)) {
-        return true;
-    } else {
-        return false;
+        return Number.isInteger(a);
     }
 }
 console.log(validateIntenger(a));
@@ -77,7 +75,7 @@ function validacion(a, b) {
             alert('Error num2: El numero tiene decimales');
             console.log(Math.round(b));
         } else {
-            resultado = a + b;
+            pepe = a + b;
         }
     } else {
         alert('El formato no corresponde a numeros');
@@ -85,9 +83,9 @@ function validacion(a, b) {
     }
 }
 
-function suma2(a, b) {
+var suma2 = function (a, b) {
     validacion(a, b);
-    console.log(resultado);
-}
+    console.log(pepe);
+};
 
 suma2(num1, num2);

@@ -78,47 +78,58 @@
                     <form action="#">
                         <div class="form-sign">
                             <label for="name-sign">Nombre</label>
-                            <input type="text" name="name-sign" placeholder="Nombre" id="name-sign">
+                            <input type="text" name="name-sign" placeholder="Juan" id="name-sign">
+                            <p class="error-text">¡Debe tener más de 3 letras!</p>
                         </div>
                         <div class="form-sign">
                             <label for="surName-sign">Apellido</label>
-                            <input type="text" name="surName-sign" placeholder="Apellido" id="surName-sign">
+                            <input type="text" name="surName-sign" placeholder="Perez" id="surName-sign">
+                            <p class="error-text">¡Debe tener más de 3 letras!</p>
                         </div>
                         <div class="form-sign">
-                            <label for="dni">Dni</label>
+                            <label for="dni">DNI</label>
                             <input type="number" name="dni-sign" placeholder="12.345.678" id="dni">
+                            <p class="error-text">¡Debe tener más de 7 números!</p>
                         </div>
                         <div class="form-sign">
                             <label for="fdn-sign">Fecha de Nacimiento</label>
-                            <input type="date" name="fdn-sign" placeholder="10/10/2020" id="fdn-sign">
+                            <input type="date" name="fdn-sign" id="fdn-sign">
+                            <p class="error-text">¡El formato no corresponde!</p>
                         </div>
                         <div class="form-sign">
                             <label for="tel-sign">Telefono</label>
-                            <input type="tel" name="tel-sign" placeholder="00000-0000" id="tel-sign">
+                            <input type="tel" name="tel-sign" placeholder="0000-000000" id="tel-sign">
+                            <p class="error-text">¡Debe tener 10 números!</p>
                         </div>
                         <div class="form-sign">
                             <label for="dir-sign">Direccion</label>
-                            <input type="text" name="dir-sign" placeholder="Cordoba 1000" id="dir-sign">
+                            <input type="text" name="dir-sign" placeholder="Cordoba 1234" id="dir-sign">
+                            <p class="error-text">¡Al menos 5 caracteres con letras, números y un espacio en el medio!</p>
                         </div>
                         <div class="form-sign">
                             <label for="location-sign">Localidad</label>
                             <input type="text" name="location-sign" placeholder="Rosario" id="location-sign">
+                            <p class="error-text">¡Texto alfanumérico y debe tener más de 3 letras!</p>
                         </div>
                         <div class="form-sign">
                             <label for="cp-sign">Codigo Postal</label>
                             <input type="number" name="cp-sign" placeholder="2000" id="cp-sign">
+                            <p class="error-text">¡Debe tener entre 4 y 5 números!</p>
                         </div>
                         <div class="form-sign">
                             <label for="email-sign">Email</label>
                             <input type="email" name="email-sign" placeholder="Email@email.com" id="email-sign">
+                            <p class="error-text">¡El formato no corresponde!</p>
                         </div>
                         <div class="form-sign">
                             <label for="pass-sign">Contraseña</label>
                             <input type="password" name="pass-sign" placeholder="Contraseña" id="pass-sign">
+                            <p class="error-text">¡Al menos 8 caracteres, formados por letras y números!</p>
                         </div>
                         <div class="form-sign">
                             <label for="repass-sign">Repetir Contraseña</label>
-                            <input type="password" name="pass-sign" placeholder="Repetir Contraseña" id="repass-sign">
+                            <input type="password" name="repass-sign" placeholder="Repetir Contraseña" id="repass-sign">
+                            <p class="error-text">¡Al menos 8 caracteres, formados por letras y números!</p>
                         </div>
                         <button class="btn-sign">Create account</button>
                         <a href="index.html" class="home">Home</a>
@@ -154,5 +165,6 @@
                 </div>
             </footer>
         </div>
+        <script src="../javascript/sign-up.js"></script>
     </body>
 </html>

@@ -55,7 +55,20 @@ console.log(meses.join(' - '));
 //g. Crear una copia del array de meses que contenga desde Mayo hasta Noviembre (utilizar slice).
 
 console.log('Exercise 3.g');
-meses.sort();
+meses = [
+    'Enero',
+    'Febrero',
+    'Marzo',
+    'Abril',
+    'Mayo',
+    'Junio',
+    'Julio',
+    'Agosto',
+    'Septiembre',
+    'Octubre',
+    'Noviembre',
+    'Diciembre',
+];
 mayo = meses.indexOf('Mayo');
 noviembre = meses.indexOf('Noviembre');
 console.log(meses.slice(mayo, ++noviembre));

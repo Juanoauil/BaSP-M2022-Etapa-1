@@ -13,7 +13,7 @@ console.log(frase.toUpperCase());
 
 console.log('Exercise 2.b');
 var frase2 = 'Frase con al menos 10 caracteres';
-subString2 = frase2.substring(0, 5);
+var subString2 = frase2.substring(0, 5);
 console.log(subString2);
 
 //c. Crear una variable de tipo string con al menos 10 caracteres
@@ -21,7 +21,7 @@ console.log(subString2);
 
 console.log('Exercise 2.c');
 var frase3 = 'Rercer frase de prueba para generar un substring';
-subString3 = frase3.substring(48, 45);
+var subString3 = frase3.substring(48, 45);
 console.log(subString3);
 
 //d. Crear una variable de tipo string con al menos 10 caracteres y generar un nuevo string con la primera letra en mayúscula
@@ -29,10 +29,10 @@ console.log(subString3);
 
 console.log('Exercise 2.d');
 var frase4 = 'frase con mayusculas y minusculas';
-upperFrase4 = frase4.substring(0, 1);
-primerMayus = upperFrase4.toUpperCase();
-lowerFrase4 = frase4.substring(1, 33);
-frase4Finale = primerMayus + lowerFrase4;
+var upperFrase4 = frase4.substring(0, 1);
+var primerMayus = upperFrase4.toUpperCase();
+var lowerFrase4 = frase4.substring(1, 33);
+var frase4Finale = primerMayus + lowerFrase4;
 console.log(frase4Finale);
 
 //e. Crear una variable de tipo string con al menos 10 caracteres y algún espacio en blanco. Encontrar la posición del primer espacio en blanco
@@ -40,7 +40,7 @@ console.log(frase4Finale);
 
 console.log('Exercise 2.e');
 var frase5 = 'Frase para buscar un espacio intermedio';
-spaceFrase5 = frase5.indexOf(' ');
+var spaceFrase5 = frase5.indexOf(' ');
 console.log(spaceFrase5);
 
 //f. Crear una variable de tipo string con al menos 2 palabras largas (10 caracteres y algún espacio entre medio).
@@ -49,14 +49,14 @@ console.log(spaceFrase5);
 
 console.log('Exercise 2.f');
 var frase6 = 'problematica semanal';
-// console.log(frase6.indexOf("problematica"));
-// console.log(frase6.indexOf("semanal"));
-primerMayus = frase6.substring(0, 1);
-segundaMayus = frase6.substring(13, 14);
-restOfFrase1 = frase6.substring(1, 13);
-restOfFrase2 = frase6.substring(14, 20);
-fraseFinal =
-    primerMayus.toUpperCase() +
+var primerLetra = frase6.indexOf('problematica');
+var segundaLetra = frase6.indexOf('semanal');
+var primeraMayus = frase6.substring(primerLetra, ++primerLetra);
+var segundaMayus = frase6.substring(segundaLetra, ++segundaLetra);
+var restOfFrase1 = frase6.substring(++primerLetra, --segundaLetra);
+var restOfFrase2 = frase6.substring(++segundaLetra);
+var fraseFinal =
+    primeraMayus.toUpperCase() +
     restOfFrase1 +
     segundaMayus.toUpperCase() +
     restOfFrase2;

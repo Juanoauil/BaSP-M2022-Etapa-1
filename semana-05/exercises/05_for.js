@@ -6,7 +6,7 @@ console.log('EXERCISE 5: FOR');
 //   for de JavaScript para mostrar una alerta utilizando cada una de las palabras.
 
 console.log('Exercise 5.a');
-var colores = new Array('rojo', 'azul', 'amarillo', 'verde', 'violeta');
+var colores = ['rojo', 'azul', 'amarillo', 'verde', 'violeta'];
 for (i = 0; i < colores.length; i++) {
     alert(colores[i]);
 }
@@ -16,9 +16,8 @@ for (i = 0; i < colores.length; i++) {
 
 console.log('Exercise 5.b');
 for (i = 0; i < colores.length; i++) {
-    color = colores[i];
-    primeraLetra = color.substring(0, 1);
-    restoDeColores = color.substring(1);
+    var primeraLetra = colores[i].substring(0, 1);
+    var restoDeColores = colores[i].substring(1);
     alert(primeraLetra.toUpperCase() + restoDeColores);
 }
 
@@ -29,7 +28,7 @@ for (i = 0; i < colores.length; i++) {
 console.log('Exercise 5.c');
 var sentence = '';
 for (i = 0; i < colores.length; i++) {
-    sentence = colores.toString();
+    sentence = colores.join(', ');
 }
 alert(sentence);
 
@@ -38,8 +37,8 @@ alert(sentence);
 //   Mostrar por la consola del navegador el array final (utilizar console.log).
 
 console.log('Exercise 5.d');
-var vacio = new Array();
+var vacio = [];
 for (i = 0; i < 10; i++) {
-    vacio = i;
-    console.log(vacio);
+    vacio[i] = i;
 }
+console.log(vacio);
