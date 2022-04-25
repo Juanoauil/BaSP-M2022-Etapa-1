@@ -13,20 +13,7 @@ var hideAlert = document.getElementsByClassName('error-text');
 var validateValue = document.getElementsByClassName('inner-span');
 var validateForm = document.getElementsByClassName('hide-cartel');
 var form = document.getElementsByTagName('form');
-
-function myFocus(x, i) {
-    x.classList.remove('blur');
-    hideAlert[i].classList.remove('error');
-}
-function myBlur(x, i) {
-    if (x.value == '') {
-        x.classList.add('blur');
-        x.classList.remove('correct');
-        hideAlert[i].classList.add('error');
-    } else {
-        x.classList.add('correct');
-    }
-}
+var closeModal = document.getElementById('close-modal');
 
 nombre.onfocus = function () {
     myFocus(nombre, 0);
@@ -94,125 +81,257 @@ reContra.onfocus = function () {
 reContra.onblur = function () {
     myBlur(reContra, 10);
 };
+form[1].onsubmit = function (e) {
+    e.preventDefault();
+    if (
+        validateLetters(nombre, 3) == true &&
+        validateLetters(apellido, 3) == true &&
+        validateNumbers(dni, 7) == true &&
+        validateTel(telefono, 10) == true &&
+        validateDir(dir, 5) == true &&
+        validateLocal(local, 3) == true &&
+        validateCp(cp) == true &&
+        validateMail(email) == true &&
+        validatePass(contra, 8) == true &&
+        validateRePass(contra, reContra) == true
+    ) {
+        validateForm[0].classList.add('cartel');
+        validateValue[0].innerHTML = nombre.value;
+        validateValue[1].innerHTML = apellido.value;
+        validateValue[2].innerHTML = dni.value;
+        validateValue[3].innerHTML = fdn.value;
+        validateValue[4].innerHTML = telefono.value;
+        validateValue[5].innerHTML = dir.value;
+        validateValue[6].innerHTML = local.value;
+        validateValue[7].innerHTML = cp.value;
+        validateValue[8].innerHTML = email.value;
+        validateValue[9].innerHTML = contra.value;
+        validateValue[10].innerHTML = reContra.value;
+    } else {
+        alert('Algun dato esta mal ingresado');
+    }
+};
 
-// function blu(x, i) {
-//     if (x.value != '') {
-//         return true;
-//     } else {
-//         alertInput[i].innerHTML = '¡Completa con numeros y letras!';
-//         x.classList.add('blur');
-//         correct = false;
-//         return correct;
-//     }
-// }
-// function foc(x, i) {
-//     alertInput[i].innerHTML = 'vacio';
-//     x.classList.remove('blur');
-// }
+closeModal.onclick = function () {
+    validateForm[0].classList.remove('cartel');
+};
 
-// contra.onfocus = function () {
-//     hideAlert[9].innerHTML = '';
-//     pass.classList.remove('blur');
-// };
-// contra.onblur = function () {
-//     var numbers = /[0-9]/;
-//     var letters = /[a-z]/;
-//     if (
-//         contra.value.match(numbers) &&
-//         contra.value.match(letters) &&
-//         contra.value.length > 7
-//     ) {
-//         return true;
-//     } else {
-//         hideAlert[9].innerHTML = '¡Completa con numeros y letras!';
-//         pass.classList.add('blur');
-//         return false;
-//     }
-// };
-// function pepe(i, elementos) {
-//     alertInput[i].innerHTML = '';
-//     elementos.classList.remove('blur');
-// }
-// // function jorge(i, x) {
-// function jorge(e, i, x) {
-//     e.preventDefault();
-//     if (typeof x.value === 'string' && x.value.length > 3) {
-//         correct = true;
-//         return correct;
-//     } else {
-//         alertInput[i].innerHTML = `¡El ${x} es muy corto!`;
-//         x.classList.add('blur');
-//         correct = false;
-//         return correct;
-//     }
-// }
+function myFocus(x, i) {
+    x.classList.remove('blur');
+    hideAlert[i].classList.remove('error');
+}
 
-// contra.onfocus = pepe(e, 9, contra);
-// contra.onblur = jorge(e, 9, contra);
-// contra.addEventListener('focus', pepe(9, contra));
-// contra.addEventListener('blur', jorge(9, contra));
-// contra.onfocus = pepe(9, contra);
-// contra.onblur = jorge(9, contra);
-// contra.onblur = function () {
-//     if (typeof contra.value === 'string' && contra.value.length > 3) {
-//         correct = true;
-//         return correct;
-//     } else {
-//         alertInput[9].innerHTML = '¡El apellido es muy corto!';
-//         contra.classList.add('blur');
-//         correct = false;
-//     }
-// };
-// nombre.onfocus = function () {
-//     alertInput[0].innerHTML = '';
-//     nombre.classList.remove('blur');
-// };
+function myBlur(x, i) {
+    if (x.value == '') {
+        x.classList.add('blur');
+        x.classList.remove('correct');
+        hideAlert[i].classList.add('error');
+    } else {
+        x.classList.add('correct');
+    }
+}
 
-// nombre.onblur = function () {
-//     if (typeof nombre.value === 'string' && nombre.value.length > 3) {
-//         correct = true;
-//         return correct;
-//     } else {
-//         alertInput[0].innerHTML = '¡El nombre es muy corto y no me sirve!';
-//         nombre.classList.add('blur');
-//         correct = false;
-//         return correct;
-//     }
-// };
+function validateMail(x) {
+    var regexMail = /[a-z0-9]+@[a-z]+.[a-z]{2,3}/;
+    if (regexMail.test(x.value)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
-// apellido.onblur = function () {
-//     if (typeof apellido.value === 'string' && apellido.value.length > 3) {
-//         correct = true;
-//         return correct;
-//     } else {
-//         alertInput[1].innerHTML = '¡El apellido es muy corto!';
-//         apellido.classList.add('blur');
-//         correct = false;
-//     }
-// };
+function validateLetters(x, valor) {
+    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    var num = 0;
+    var char = 0;
+    for (i = 0; i < x.value.length; i++) {
+        if (numbers.includes(x.value[i])) {
+            num++;
+        } else {
+            char++;
+        }
+    }
+    if (x.value.length >= valor && num == 0 && char >= 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
-// dni.onblur = function () {
-//     if (typeof dni.value === 'number' && dni.value.length > 7) {
-//         correct = true;
-//         return correct;
-//     } else {
-//         alertInput[1].innerHTML = '¡El dni es muy corto!';
-//         dni.classList.add('blur');
-//         correct = false;
-//     }
-// };
-// contra.onfocus = function () {
-//     alertInput[9].innerHTML = '';
-//     contra.classList.remove('blur');
-// };
-// contra.onblur = function oscar(x, i) {
-//     if (typeof x.value === 'number' && x.value.length > 3) {
-//         correct = true;
-//         return correct;
-//     } else {
-//         alertInput[i].innerHTML = '¡Elasdasdasdasdasdes muy corto!';
-//         x.classList.add('blur');
-//         correct = false;
-//         return correct;
-//     }
-// };
+function validateDir(x, valor) {
+    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    var space = [' '];
+    var num = 0;
+    var spa = 0;
+    var char = 0;
+    for (i = 0; i < x.value.length; i++) {
+        if (numbers.includes(x.value[i])) {
+            num++;
+        } else if (space.includes(x.value[i])) {
+            spa++;
+        } else {
+            char++;
+        }
+    }
+    if (x.value.length >= valor && num >= 1 && char >= 1 && spa == 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validateNumbers(x, valor) {
+    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    var num = 0;
+    var char = 0;
+    for (i = 0; i < x.value.length; i++) {
+        if (numbers.includes(x.value[i])) {
+            num++;
+        } else {
+            char++;
+        }
+    }
+    if (x.value.length >= valor && num >= 1 && char == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+function validateCp(x) {
+    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    var num = 0;
+    for (i = 0; i < x.value.length; i++) {
+        if (numbers.includes(x.value[i])) {
+            num++;
+        }
+    }
+    if (x.value.length <= 5 && num >= 4) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validateTel(x, valor) {
+    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    var num = 0;
+    var char = 0;
+    for (i = 0; i < x.value.length; i++) {
+        if (numbers.includes(x.value[i])) {
+            num++;
+        } else {
+            char++;
+        }
+    }
+    if (x.value.length == valor && num >= 1 && char == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validatePass(x, valor) {
+    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    var alph = [
+        'a',
+        'b',
+        'c',
+        'd',
+        'e',
+        'f',
+        'g',
+        'h',
+        'i',
+        'j',
+        'k',
+        'l',
+        'm',
+        'n',
+        'o',
+        'p',
+        'q',
+        'r',
+        's',
+        'u',
+        'v',
+        'w',
+        'x',
+        'y',
+        'z',
+    ];
+    var minValue = x.value.toLowerCase();
+    var num = 0;
+    var char = 0;
+    var special = false;
+    for (i = 0; i < x.value.length; i++) {
+        if (numbers.includes(x.value[i])) {
+            num++;
+        } else if (alph.includes(minValue[i])) {
+            char++;
+        } else {
+            special = true;
+        }
+    }
+    if (x.value.length >= valor && num >= 1 && char >= 1 && special == false) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validateLocal(x, valor) {
+    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    var alph = [
+        'a',
+        'b',
+        'c',
+        'd',
+        'e',
+        'f',
+        'g',
+        'h',
+        'i',
+        'j',
+        'k',
+        'l',
+        'm',
+        'n',
+        'o',
+        'p',
+        'q',
+        'r',
+        's',
+        'u',
+        'v',
+        'w',
+        'x',
+        'y',
+        'z',
+    ];
+    var minValue = x.value.toLowerCase();
+    var num = 0;
+    var char = 0;
+    var special = false;
+    for (i = 0; i < x.value.length; i++) {
+        if (numbers.includes(x.value[i])) {
+            num++;
+        } else if (alph.includes(minValue[i])) {
+            char++;
+        } else {
+            special = true;
+        }
+    }
+    if (x.value.length >= valor && num >= 1 && char >= 3) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validateRePass(x, y) {
+    if (x.value == y.value) {
+        return true;
+    } else {
+        return false;
+    }
+}
