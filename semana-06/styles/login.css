@@ -88,11 +88,11 @@ h2{
     display: none;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
 }
 .modal{
@@ -100,9 +100,10 @@ h2{
     flex-direction: column;
     padding: 10px;
     width: 30%;
+    min-width: 270px;
     background-color: #fff;
     border-radius: 15px;
-    min-width: 270px;
+    border: 2px solid #000;
 }
 .modal-header{
     display: flex;
