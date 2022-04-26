@@ -10,13 +10,13 @@ mail.onfocus = function () {
     myFocus(mail, 0);
 };
 mail.onblur = function () {
-    myBlur(mail, 0);
+    myBlur(mail, 0, validateMail);
 };
 pass.onfocus = function () {
     myFocus(pass, 1);
 };
 pass.onblur = function () {
-    myBlur(pass, 1);
+    myBlur(pass, 1, validatePass);
 };
 form[1].onsubmit = function (e) {
     e.preventDefault();
@@ -49,31 +49,32 @@ closeModal.onclick = function () {
     validateForm[0].classList.remove('cartel');
 };
 
-function myFocus(x, i) {
-    x.classList.remove('blur');
+function myFocus(inputs, i) {
+    inputs.classList.remove('blur');
     hideAlert[i].classList.remove('error');
 }
 
-function myBlur(x, i) {
-    if (x.value == '') {
-        x.classList.add('blur');
-        x.classList.remove('correct');
-        hideAlert[i].classList.add('error');
+function myBlur(inputs, i, validation) {
+    if (validation(inputs) == true) {
+        inputs.classList.add('correct');
+        hideAlert[i].classList.remove('error');
     } else {
-        x.classList.add('correct');
+        inputs.classList.add('blur');
+        inputs.classList.remove('correct');
+        hideAlert[i].classList.add('error');
     }
 }
 
-function validateMail(x) {
+function validateMail(inputs) {
     var regexMail = /[a-z0-9]+@[a-z]+.[a-z]{2,3}/;
-    if (regexMail.test(x.value)) {
+    if (regexMail.test(inputs.value)) {
         return true;
     } else {
         return false;
     }
 }
 
-function validatePass(x) {
+function validatePass(inputs) {
     var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var alph = [
         'a',
@@ -102,12 +103,12 @@ function validatePass(x) {
         'y',
         'z',
     ];
-    var minValue = x.value.toLowerCase();
+    var minValue = inputs.value.toLowerCase();
     var num = 0;
     var char = 0;
     var special = false;
-    for (i = 0; i < x.value.length; i++) {
-        if (numbers.includes(x.value[i])) {
+    for (i = 0; i < inputs.value.length; i++) {
+        if (numbers.includes(inputs.value[i])) {
             num++;
         } else if (alph.includes(minValue[i])) {
             char++;
@@ -115,7 +116,7 @@ function validatePass(x) {
             special = true;
         }
     }
-    if (x.value.length >= 8 && num >= 1 && char >= 1 && special == false) {
+    if (inputs.value.length >= 8 && num >= 1 && char >= 1 && special == false) {
         return true;
     } else {
         return false;

@@ -19,67 +19,67 @@ nombre.onfocus = function () {
     myFocus(nombre, 0);
 };
 nombre.onblur = function () {
-    myBlur(nombre, 0);
+    myBlurTwo(nombre, 0, validateLetters, 3);
 };
 apellido.onfocus = function () {
     myFocus(apellido, 1);
 };
 apellido.onblur = function () {
-    myBlur(apellido, 1);
+    myBlurTwo(apellido, 1, validateLetters, 3);
 };
 dni.onfocus = function () {
     myFocus(dni, 2);
 };
 dni.onblur = function () {
-    myBlur(dni, 2);
+    myBlurTwo(dni, 2, validateNumbers, 7);
 };
 fdn.onfocus = function () {
     myFocus(fdn, 3);
 };
 fdn.onblur = function () {
-    myBlur(fdn, 3);
+    myBlur(fdn, 3, validateDate);
 };
 telefono.onfocus = function () {
     myFocus(telefono, 4);
 };
 telefono.onblur = function () {
-    myBlur(telefono, 4);
+    myBlurTwo(telefono, 4, validateTel, 10);
 };
 dir.onfocus = function () {
     myFocus(dir, 5);
 };
 dir.onblur = function () {
-    myBlur(dir, 5);
+    myBlurTwo(dir, 5, validateDir, 5);
 };
 local.onfocus = function () {
     myFocus(local, 6);
 };
 local.onblur = function () {
-    myBlur(local, 6);
+    myBlurTwo(local, 6, validateLocal, 3);
 };
 cp.onfocus = function () {
     myFocus(cp, 7);
 };
 cp.onblur = function () {
-    myBlur(cp, 7);
+    myBlur(cp, 7, validateCp);
 };
 email.onfocus = function () {
     myFocus(email, 8);
 };
 email.onblur = function () {
-    myBlur(email, 8);
+    myBlur(email, 8, validateMail);
 };
 contra.onfocus = function () {
     myFocus(contra, 9);
 };
 contra.onblur = function () {
-    myBlur(contra, 9);
+    myBlurTwo(contra, 9, validatePass, 8);
 };
 reContra.onfocus = function () {
     myFocus(reContra, 10);
 };
 reContra.onblur = function () {
-    myBlur(reContra, 10);
+    myBlur(reContra, 10, validateRePass);
 };
 form[1].onsubmit = function (e) {
     e.preventDefault();
@@ -117,25 +117,36 @@ closeModal.onclick = function () {
     validateForm[0].classList.remove('cartel');
 };
 
-function myFocus(x, i) {
-    x.classList.remove('blur');
+function myFocus(inputs, i) {
+    inputs.classList.remove('blur');
     hideAlert[i].classList.remove('error');
 }
 
-function myBlur(x, i) {
-    if (x.value == '') {
-        x.classList.add('blur');
-        x.classList.remove('correct');
-        hideAlert[i].classList.add('error');
+function myBlur(inputs, i, validation) {
+    if (validation(inputs) == true) {
+        inputs.classList.add('correct');
+        hideAlert[i].classList.remove('error');
     } else {
-        x.classList.add('correct');
+        inputs.classList.add('blur');
+        inputs.classList.remove('correct');
+        hideAlert[i].classList.add('error');
+    }
+}
+function myBlurTwo(inputs, i, validation, valor) {
+    if (validation(inputs, valor) == true) {
+        inputs.classList.add('correct');
+        hideAlert[i].classList.remove('error');
+    } else {
+        inputs.classList.add('blur');
+        inputs.classList.remove('correct');
+        hideAlert[i].classList.add('error');
     }
 }
 
-function validateDate(x) {
-    var year = Number(x.value.split('-')[0]);
-    var month = Number(x.value.split('-')[1]);
-    var day = Number(x.value.split('-')[2]);
+function validateDate(inputs) {
+    var year = Number(inputs.value.split('-')[0]);
+    var month = Number(inputs.value.split('-')[1]);
+    var day = Number(inputs.value.split('-')[2]);
     if (year < 1920 || year > 2004) {
         return false;
     } else if (month > 12 || month < 1) {
@@ -147,106 +158,106 @@ function validateDate(x) {
     }
 }
 
-function validateMail(x) {
+function validateMail(inputs) {
     var regexMail = /[a-z0-9]+@[a-z]+.[a-z]{2,3}/;
-    if (regexMail.test(x.value)) {
+    if (regexMail.test(inputs.value)) {
         return true;
     } else {
         return false;
     }
 }
 
-function validateLetters(x, valor) {
+function validateLetters(inputs, valor) {
     var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var num = 0;
     var char = 0;
-    for (i = 0; i < x.value.length; i++) {
-        if (numbers.includes(x.value[i])) {
+    for (i = 0; i < inputs.value.length; i++) {
+        if (numbers.includes(inputs.value[i])) {
             num++;
         } else {
             char++;
         }
     }
-    if (x.value.length >= valor && num == 0 && char >= 1) {
+    if (inputs.value.length >= valor && num == 0 && char >= 1) {
         return true;
     } else {
         return false;
     }
 }
 
-function validateDir(x, valor) {
+function validateDir(inputs, valor) {
     var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var space = [' '];
     var num = 0;
     var spa = 0;
     var char = 0;
-    for (i = 0; i < x.value.length; i++) {
-        if (numbers.includes(x.value[i])) {
+    for (i = 0; i < inputs.value.length; i++) {
+        if (numbers.includes(inputs.value[i])) {
             num++;
-        } else if (space.includes(x.value[i])) {
+        } else if (space.includes(inputs.value[i])) {
             spa++;
         } else {
             char++;
         }
     }
-    if (x.value.length >= valor && num >= 1 && char >= 1 && spa == 1) {
+    if (inputs.value.length >= valor && num >= 1 && char >= 1 && spa == 1) {
         return true;
     } else {
         return false;
     }
 }
 
-function validateNumbers(x, valor) {
+function validateNumbers(inputs, valor) {
     var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var num = 0;
     var char = 0;
-    for (i = 0; i < x.value.length; i++) {
-        if (numbers.includes(x.value[i])) {
+    for (i = 0; i < inputs.value.length; i++) {
+        if (numbers.includes(inputs.value[i])) {
             num++;
         } else {
             char++;
         }
     }
-    if (x.value.length >= valor && num >= 1 && char == 0) {
+    if (inputs.value.length >= valor && num >= 1 && char == 0) {
         return true;
     } else {
         return false;
     }
 }
-function validateCp(x) {
+function validateCp(inputs) {
     var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var num = 0;
-    for (i = 0; i < x.value.length; i++) {
-        if (numbers.includes(x.value[i])) {
+    for (i = 0; i < inputs.value.length; i++) {
+        if (numbers.includes(inputs.value[i])) {
             num++;
         }
     }
-    if (x.value.length <= 5 && num >= 4) {
+    if (inputs.value.length <= 5 && num >= 4) {
         return true;
     } else {
         return false;
     }
 }
 
-function validateTel(x, valor) {
+function validateTel(inputs, valor) {
     var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var num = 0;
     var char = 0;
-    for (i = 0; i < x.value.length; i++) {
-        if (numbers.includes(x.value[i])) {
+    for (i = 0; i < inputs.value.length; i++) {
+        if (numbers.includes(inputs.value[i])) {
             num++;
         } else {
             char++;
         }
     }
-    if (x.value.length == valor && num >= 1 && char == 0) {
+    if (inputs.value.length == valor && num >= 1 && char == 0) {
         return true;
     } else {
         return false;
     }
 }
 
-function validatePass(x, valor) {
+function validatePass(inputs, valor) {
     var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var alph = [
         'a',
@@ -275,12 +286,12 @@ function validatePass(x, valor) {
         'y',
         'z',
     ];
-    var minValue = x.value.toLowerCase();
+    var minValue = inputs.value.toLowerCase();
     var num = 0;
     var char = 0;
     var special = false;
-    for (i = 0; i < x.value.length; i++) {
-        if (numbers.includes(x.value[i])) {
+    for (i = 0; i < inputs.value.length; i++) {
+        if (numbers.includes(inputs.value[i])) {
             num++;
         } else if (alph.includes(minValue[i])) {
             char++;
@@ -288,14 +299,19 @@ function validatePass(x, valor) {
             special = true;
         }
     }
-    if (x.value.length >= valor && num >= 1 && char >= 1 && special == false) {
+    if (
+        inputs.value.length >= valor &&
+        num >= 1 &&
+        char >= 1 &&
+        special == false
+    ) {
         return true;
     } else {
         return false;
     }
 }
 
-function validateLocal(x, valor) {
+function validateLocal(inputs, valor) {
     var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var alph = [
         'a',
@@ -324,12 +340,12 @@ function validateLocal(x, valor) {
         'y',
         'z',
     ];
-    var minValue = x.value.toLowerCase();
+    var minValue = inputs.value.toLowerCase();
     var num = 0;
     var char = 0;
     var special = false;
-    for (i = 0; i < x.value.length; i++) {
-        if (numbers.includes(x.value[i])) {
+    for (i = 0; i < inputs.value.length; i++) {
+        if (numbers.includes(inputs.value[i])) {
             num++;
         } else if (alph.includes(minValue[i])) {
             char++;
@@ -337,15 +353,15 @@ function validateLocal(x, valor) {
             special = true;
         }
     }
-    if (x.value.length >= valor && num >= 1 && char >= 3) {
+    if (inputs.value.length >= valor && num >= 1 && char >= 3) {
         return true;
     } else {
         return false;
     }
 }
 
-function validateRePass(x, y) {
-    if (x.value == y.value) {
+function validateRePass(inputs, validation) {
+    if (inputs.value == validation.value) {
         return true;
     } else {
         return false;
