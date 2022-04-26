@@ -87,6 +87,7 @@ form[1].onsubmit = function (e) {
         validateLetters(nombre, 3) == true &&
         validateLetters(apellido, 3) == true &&
         validateNumbers(dni, 7) == true &&
+        validateDate(fdn) == true &&
         validateTel(telefono, 10) == true &&
         validateDir(dir, 5) == true &&
         validateLocal(local, 3) == true &&
@@ -108,7 +109,7 @@ form[1].onsubmit = function (e) {
         validateValue[9].innerHTML = contra.value;
         validateValue[10].innerHTML = reContra.value;
     } else {
-        alert('Algun dato esta mal ingresado');
+        alert('¡Algun dato esta mal ingresado!');
     }
 };
 
@@ -128,6 +129,21 @@ function myBlur(x, i) {
         hideAlert[i].classList.add('error');
     } else {
         x.classList.add('correct');
+    }
+}
+
+function validateDate(x) {
+    var year = Number(x.value.split('-')[0]);
+    var month = Number(x.value.split('-')[1]);
+    var day = Number(x.value.split('-')[2]);
+    if (year < 1920 || year > 2004) {
+        return false;
+    } else if (month > 12 || month < 1) {
+        return false;
+    } else if (day > 31 || day < 1) {
+        return false;
+    } else {
+        return true;
     }
 }
 
