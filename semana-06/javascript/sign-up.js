@@ -79,7 +79,14 @@ reContra.onfocus = function () {
     myFocus(reContra, 10);
 };
 reContra.onblur = function () {
-    myBlur(reContra, 10, validateRePass);
+    if (validatePass(reContra, 8) && reContra.value === contra.value) {
+        reContra.classList.add('correct');
+        hideAlert[10].classList.remove('error');
+    } else {
+        reContra.classList.add('blur');
+        reContra.classList.remove('correct');
+        hideAlert[10].classList.add('error');
+    }
 };
 form[1].onsubmit = function (e) {
     e.preventDefault();
@@ -110,12 +117,18 @@ form[1].onsubmit = function (e) {
         validateValue[10].innerHTML = reContra.value;
     } else {
         alert('¡Algun dato esta mal ingresado!');
+        inValidInputs();
     }
 };
-
 closeModal.onclick = function () {
     validateForm[0].classList.remove('cartel');
 };
+
+function inValidInputs() {
+    for (i = 0; i < 11; i++) {
+        hideAlert[i].classList.add('error');
+    }
+}
 
 function myFocus(inputs, i) {
     inputs.classList.remove('blur');
@@ -132,6 +145,7 @@ function myBlur(inputs, i, validation) {
         hideAlert[i].classList.add('error');
     }
 }
+
 function myBlurTwo(inputs, i, validation, valor) {
     if (validation(inputs, valor) == true) {
         inputs.classList.add('correct');
@@ -224,6 +238,7 @@ function validateNumbers(inputs, valor) {
         return false;
     }
 }
+
 function validateCp(inputs) {
     var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var num = 0;

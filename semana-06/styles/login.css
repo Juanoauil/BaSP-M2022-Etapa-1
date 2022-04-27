@@ -1,16 +1,10 @@
-body{
-    background-color: #AACE9B;
-}
 main{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    background-image: url(../assets/back-login.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    padding: 0 1rem;
 }
 #login{
     font-weight: bolder;
@@ -144,10 +138,6 @@ h2{
 }
 .correct{
     border: 2px solid #3BBA6C;
-}
-footer{
-    background: none;
-    height: auto;
 }
 
 @media (min-width: 768px){
