@@ -1,0 +1,158 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 0 1rem;
+}
+#login{
+    font-weight: bolder;
+}
+main form{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.log-flex{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2rem;
+    padding: 1rem;
+    width: 90%;
+    border: .2px solid #000;
+    background-color: #F6F9F4;
+    border-radius: 20px;
+}
+h2{
+    font-family: Righteous;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2rem;
+    text-decoration: none;
+    text-align: center;
+    word-break: break-all;
+}
+.form-log{
+    display: flex;
+    flex-direction: column;
+    margin: 1.4rem 0;
+}
+.form-log input{
+    padding: 5px;
+    margin-top: .4rem;
+    border-radius: 5px;
+}
+.buttons-log{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.buttons-log button{
+    margin: .8rem 0;
+    width: 50%;
+    min-width: 100px;
+    cursor: pointer;
+}
+.btn-log{
+    padding: 0.4rem 1.2rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    color: #000;
+    border: none;
+    background-color: #AACE9B;
+}
+.btn-log:hover{
+    background-color: #809B75;
+}
+.btn-sign{
+    padding: 0.4rem 1.2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    border: none;
+    outline: 0.1rem solid #AACE9B;
+}
+.btn-sign:hover{
+    background-color: #F0F0F0;
+}
+.forgot{
+    font-size: .8rem;
+}
+.forgot:hover{
+    font-weight: 700;
+}
+.hide-cartel{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.modal{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 30%;
+    min-width: 270px;
+    background-color: #fff;
+    border-radius: 15px;
+    border: 2px solid #000;
+}
+.modal-header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.modal-header h2{
+    word-break: normal;
+}
+.modal-header p{
+    min-width: 20px;
+    min-height: 20px;
+    background-color: #f00;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+.modal-header p:hover{
+    background-color: #C00000;
+}
+.cartel{
+    display: flex;
+}
+.error-text{
+    color: #f00;
+    visibility: hidden;
+}
+.error{
+    visibility: visible;
+}
+.blur{
+    border: 2px solid #f00;
+}
+.correct{
+    border: 2px solid #3BBA6C;
+}
+
+@media (min-width: 768px){
+    main form{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .form-log{
+        width: 45%;
+        box-sizing: border-box;
+    }
+    .buttons-log{
+        width: 60%;
+    }
+
+}

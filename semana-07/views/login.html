@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../styles/reset.css" type="text/css">
+        <link rel="stylesheet" href="../styles/styles.css" type="text/css">
+        <link rel="stylesheet" href="../styles/header.css" type="text/css">
+        <link rel="stylesheet" href="../styles/sidebar.css" type="text/css">
+        <link rel="stylesheet" href="../styles/footer.css" type="text/css">
+        <link rel="stylesheet" href="../styles/login.css" type="text/css">
+        <title>TrackGenix || Login</title>
+    </head>
+    <body>
+        <div class="flex-aside">
+            <aside class="sidebar">
+                <div class="div-form">
+                    <form action="#">
+                        <input type="text" name="search" placeholder="Search">
+                        <a href="#"><img src="../assets/search.png" alt="icon of search"></a>
+                    </form>
+                </div>
+                <div class="text-sidebar">
+                    <p class="title-sidebar">Menu</p>
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="#">Generic</a></li>
+                        <li><a href="#">Submenu</a></li>
+                    </ul>
+                </div>
+                <div class="text-sidebar">
+                    <p class="title-sidebar">Get in Touch</p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Leo, venenatis volutpat fusce vitae, in suspendisse proin massa.
+                        Mattis nulla libero nibh eu nisl sed.
+                    </p>
+                    <ul>
+                        <li class="box-contact">
+                            <img src="../assets/message.png" alt="icon of message">
+                            <span>information@untitled.tld</span>
+                        </li>
+                        <li class="box-contact">
+                            <img src="../assets/phone.png" alt="icon of phone">
+                            <span>(000) 0000 00000</span>
+                        </li>
+                        <li class="box-contact">
+                            <img src="../assets/home.png" alt="icon of home">
+                            <span>1234 Somewhere Road #8254 Nashville, TN 00000-0000</span>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+        <div class="flex-main">
+            <header>
+                <div class="header">
+                    <span><img src="../assets/burger.png" alt="icon of Burger Menu"></span>
+                    <h1>TrackGenix</h1>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="sign-up.html">SignUp</a></li>
+                            <li><a href="login.html" id="login">Login</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <main>
+                <div class="log-flex">
+                    <h2>TrackGenix</h2>
+                    <form action="#">
+                        <div class="form-log">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" placeholder="Email" id="email">
+                            <p class="error-text">Insert a valid Email!</p>
+                        </div>
+                        <div class="form-log">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" placeholder="Password" id="pass">
+                            <p class="error-text">Insert a valid Password!</p>
+                        </div>
+                        <div class="buttons-log">
+                            <div>
+                                <input type="checkbox">Remember Me
+                            </div>
+                            <button type="submit" class="btn-log">Log In</button>
+                            <button class="btn-sign"><a href="sign-up.html">Sign Up</a></button>
+                            <a href="#" class="forgot">I forgot my password</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="hide-cartel">
+                    <div class="modal">
+                        <div class="modal-header">
+                            <h2>Validation results</h2>
+                            <p id="close-modal">X</p>
+                        </div>
+                        <ul>
+                            <li>Email : <span class="inner-span"></span></li>
+                            <li>Password : <span class="inner-span"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <div class="social-media">
+                    <a href="#"><img src="../assets/twitter.png" alt="icon of twitter"></a>
+                    <a href="#"><img src="../assets/linkedin.png" alt="icon of linkedin"></a>
+                    <a href="#"><img src="../assets/ig.png" alt="icon of instagram"></a>
+                    <a href="#"><img src="../assets/fb.png" alt="icon of facebook"></a>
+                </div>
+                <div class="location">
+                    <h4>Rosario, Argentina</h4>
+                    <h4>Copyright © 2022 Trackgenix. All rights reserved</h4>
+                </div>
+            </footer>
+        </div>
+        <script src="../javascript/login.js"></script>
+    </body>
+</html>

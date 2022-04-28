@@ -27,3 +27,9 @@ We have to join these files to the index file so we can browse between the diffe
 For each of the new html files, we must generate a new js file that validates the data entry in the corresponding fields.
 
 [Login and SignUp Pages](https://juanoauil.github.io/BaSP-M2022-Etapa-1/semana-06/views/index.html)
+
+## Week 7 - Login and SignUp responsive pages with Javascript
+
+
+
+[Login and SignUp Pages](https://juanoauil.github.io/BaSP-M2022-Etapa-1/semana-07/views/index.html)
