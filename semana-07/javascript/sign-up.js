@@ -258,7 +258,7 @@ function validateLocal(inputs, inputsLength) {
             special = true;
         }
     }
-    if (inputs.value.length >= inputsLength && num >= 1 && char >= 3) {
+    if (inputs.value.length >= inputsLength && num == 0 && char >= 3) {
         return true;
     } else {
         return false;
@@ -397,7 +397,7 @@ fetch('https://basp-m2022-api-rest-server.herokuapp.com/signup')
     })
     .then(function (jsonResponse) {
         console.log('json', jsonResponse);
-        if (jsonResponse) {
+        if (jsonResponse.success) {
             console.log('Good', jsonResponse);
         } else {
             throw jsonResponse;

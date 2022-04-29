@@ -28,8 +28,11 @@ For each of the new html files, we must generate a new js file that validates th
 
 [Login and SignUp Pages](https://juanoauil.github.io/BaSP-M2022-Etapa-1/semana-06/views/index.html)
 
-## Week 7 - Login and SignUp responsive pages with Javascript
+## Week 7 - Validate form with server
 
+This week we'll be working with validations in the server and storage in the /LocalStorage/.
+We have to validate a user that was previously loaded to the server, for the login form.
+Besides, the information loaded in the signup form has to be stored in the /LocalStorage/.
+In case the access is successful, we have to display the loaded data. Otherwise, we have to display an error.
 
-
-[Login and SignUp Pages](https://juanoauil.github.io/BaSP-M2022-Etapa-1/semana-07/views/index.html)
+[Validate forms](https://juanoauil.github.io/BaSP-M2022-Etapa-1/semana-07/views/index.html)

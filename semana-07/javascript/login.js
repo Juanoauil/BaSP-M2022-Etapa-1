@@ -80,6 +80,36 @@ function validatePass(inputs) {
     }
 }
 
+function myRequest(emailValue, passValue, url) {
+    fetch(url + '?email=' + emailValue + '&password=' + passValue, {
+        params: {
+            email: emailValue,
+            password: passValue,
+        },
+    })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (jsonResponse) {
+            alert(jsonResponse.msg);
+            if (jsonResponse.success) {
+                validateForm[0].classList.add('cartel');
+                validateValue[0].innerHTML = mail.value;
+                validateValue[1].innerHTML = pass.value;
+            } else {
+                mail.classList.add('blur');
+                mail.classList.remove('correct');
+                hideAlert[0].classList.add('error');
+                pass.classList.add('blur');
+                pass.classList.remove('correct');
+                hideAlert[1].classList.add('error');
+            }
+        })
+        .catch(function (error) {
+            console.log('Error', error);
+        });
+}
+
 ////////EVENTS
 
 mail.onfocus = function () {
@@ -95,46 +125,13 @@ pass.onblur = function () {
     myBlur(pass, 1, validatePass);
 };
 form[1].onsubmit = function (e) {
+    var url = 'https://basp-m2022-api-rest-server.herokuapp.com/login';
     e.preventDefault();
-    if (
-        validateMail(mail) &&
-        // mail.value === 'rose@radiumrocket.com' &&
-        validatePass(pass)
-        // pass.value === 'BaSP2022'
-    ) {
-        fetch('https://basp-m2022-api-rest-server.herokuapp.com/login')
-            .then(function (response) {
-                console.log(response);
-                return response.json();
-            })
-            .then(function (responseJson) {
-                console.log('Datos', responseJson);
-                if (responseJson.errors) {
-                    console.log(10);
-                } else {
-                    console.log(20);
-                }
-            })
-            .catch(function (error) {
-                alert('Error', error);
-            });
-        validateForm[0].classList.add('cartel');
-        validateValue[0].innerHTML = mail.value;
-        validateValue[1].innerHTML = pass.value;
-    } else {
-        alert('Invalid email!');
-        mail.classList.add('blur');
-        mail.classList.remove('correct');
-        hideAlert[0].classList.add('error');
-        pass.classList.add('blur');
-        pass.classList.remove('correct');
-        hideAlert[1].classList.add('error');
+    if (validateMail(mail) && validatePass(pass)) {
+        myRequest(mail.value, pass.value, url);
     }
 };
 
 closeModal.onclick = function () {
     validateForm[0].classList.remove('cartel');
 };
-
-// const querystring = window.location.search;
-// console.log(querystring);
