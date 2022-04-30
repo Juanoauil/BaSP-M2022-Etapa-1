@@ -81,15 +81,7 @@ function validatePass(inputs) {
 }
 
 function myRequest(emailValue, passValue, url) {
-    fetch(url + '?email=' + emailValue + '&password=' + passValue, {
-        params: {
-            email: emailValue,
-            password: passValue,
-        },
-    })
-        .then(function (response) {
-            return response.json();
-        })
+    fetch(url + '?email=' + emailValue + '&password=' + passValue)
         .then(function (jsonResponse) {
             alert(jsonResponse.msg);
             if (jsonResponse.success) {

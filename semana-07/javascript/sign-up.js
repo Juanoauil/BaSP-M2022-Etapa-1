@@ -279,8 +279,108 @@ function inValidInputs() {
     }
 }
 
+function myRequest(
+    nameValue,
+    lastNameValue,
+    idValue,
+    dobValue,
+    phoneValue,
+    addressValue,
+    cityValue,
+    zipValue,
+    emailValue,
+    passValue,
+    url
+) {
+    fetch(
+        url +
+            '?name=' +
+            nameValue +
+            '&lastName=' +
+            lastNameValue +
+            '&dni=' +
+            idValue +
+            '&dob=' +
+            dobValue +
+            '&phone=' +
+            phoneValue +
+            '&address=' +
+            addressValue +
+            '&city=' +
+            cityValue +
+            '&zip=' +
+            zipValue +
+            '&email=' +
+            emailValue +
+            '&password=' +
+            passValue
+    )
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (jsonResponse) {
+            console.log(jsonResponse);
+            alert(jsonResponse.msg);
+            if (jsonResponse.success) {
+                myStorage();
+                validateForm[0].classList.add('cartel');
+                validateValue[0].innerHTML = firstName.value;
+                validateValue[1].innerHTML = surName.value;
+                validateValue[2].innerHTML = idNumber.value;
+                validateValue[3].innerHTML = dateBirth.value;
+                validateValue[4].innerHTML = phone.value;
+                validateValue[5].innerHTML = addressInput.value;
+                validateValue[6].innerHTML = local.value;
+                validateValue[7].innerHTML = zipCode.value;
+                validateValue[8].innerHTML = email.value;
+                validateValue[9].innerHTML = password.value;
+                validateValue[10].innerHTML = rePassword.value;
+            } else {
+                inValidInputs();
+            }
+        })
+        .catch(function (error) {
+            console.log('Error', error);
+        });
+}
+
+function myStorage() {
+    localStorage.setItem('name', firstName.value);
+    localStorage.setItem('lastName', surName.value);
+    localStorage.setItem('dni', idNumber.value);
+    localStorage.setItem('date', dateBirth.value);
+    localStorage.setItem('phone', phone.value);
+    localStorage.setItem('address', addressInput.value);
+    localStorage.setItem('city', local.value);
+    localStorage.setItem('zip', zipCode.value);
+    localStorage.setItem('email', email.value);
+}
+
 ////// EVENTS
 
+window.onload = function () {
+    if (
+        localStorage.getItem('name') != null &&
+        localStorage.getItem('lastName') != null &&
+        localStorage.getItem('dni') != null &&
+        localStorage.getItem('date') != null &&
+        localStorage.getItem('phone') != null &&
+        localStorage.getItem('address') != null &&
+        localStorage.getItem('city') != null &&
+        localStorage.getItem('zip') != null &&
+        localStorage.getItem('email') != null
+    ) {
+        firstName.value = localStorage.getItem('name');
+        surName.value = localStorage.getItem('lastName');
+        idNumber.value = localStorage.getItem('dni');
+        dateBirth.value = localStorage.getItem('date');
+        phone.value = localStorage.getItem('phone');
+        addressInput.value = localStorage.getItem('address');
+        local.value = localStorage.getItem('city');
+        zipCode.value = localStorage.getItem('zip');
+        email.value = localStorage.getItem('email');
+    }
+};
 firstName.onfocus = function () {
     myFocus(firstName, 0);
 };
@@ -355,6 +455,14 @@ rePassword.onblur = function () {
     }
 };
 form[1].onsubmit = function (e) {
+    var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup';
+    var formatDate = dateBirth.value.split('-');
+    var newFormat =
+        formatDate.slice(1, 2) +
+        '/' +
+        formatDate.slice(2) +
+        '/' +
+        formatDate.slice(0, 1);
     e.preventDefault();
     if (
         validateLetters(firstName, 3) &&
@@ -369,18 +477,19 @@ form[1].onsubmit = function (e) {
         validatePass(password, 8) &&
         validateRePass(password, rePassword)
     ) {
-        validateForm[0].classList.add('cartel');
-        validateValue[0].innerHTML = firstName.value;
-        validateValue[1].innerHTML = surName.value;
-        validateValue[2].innerHTML = idNumber.value;
-        validateValue[3].innerHTML = dateBirth.value;
-        validateValue[4].innerHTML = phone.value;
-        validateValue[5].innerHTML = addressInput.value;
-        validateValue[6].innerHTML = local.value;
-        validateValue[7].innerHTML = zipCode.value;
-        validateValue[8].innerHTML = email.value;
-        validateValue[9].innerHTML = password.value;
-        validateValue[10].innerHTML = rePassword.value;
+        myRequest(
+            firstName.value,
+            surName.value,
+            idNumber.value,
+            newFormat,
+            phone.value,
+            addressInput.value,
+            local.value,
+            zipCode.value,
+            email.value,
+            password.value,
+            url
+        );
     } else {
         alert('¡Algun dato esta mal ingresado!');
         inValidInputs();
@@ -389,20 +498,3 @@ form[1].onsubmit = function (e) {
 closeModal.onclick = function () {
     validateForm[0].classList.remove('cartel');
 };
-
-fetch('https://basp-m2022-api-rest-server.herokuapp.com/signup')
-    .then(function (response) {
-        console.log('response', response);
-        return response.json();
-    })
-    .then(function (jsonResponse) {
-        console.log('json', jsonResponse);
-        if (jsonResponse.success) {
-            console.log('Good', jsonResponse);
-        } else {
-            throw jsonResponse;
-        }
-    })
-    .catch(function (error) {
-        console.warn('Error', error);
-    });

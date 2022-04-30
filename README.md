@@ -30,9 +30,9 @@ For each of the new html files, we must generate a new js file that validates th
 
 ## Week 7 - Validate form with server
 
-This week we'll be working with validations in the server and storage in the /LocalStorage/.
+This week we'll be working with validations in the server and storage in the Local Storage.
 We have to validate a user that was previously loaded to the server, for the login form.
-Besides, the information loaded in the signup form has to be stored in the /LocalStorage/.
+Besides, the information loaded in the signup form has to be stored in the Local Storage.
 In case the access is successful, we have to display the loaded data. Otherwise, we have to display an error.
 
 [Validate forms](https://juanoauil.github.io/BaSP-M2022-Etapa-1/semana-07/views/index.html)
