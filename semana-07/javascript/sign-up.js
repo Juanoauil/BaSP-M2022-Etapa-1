@@ -491,7 +491,6 @@ form[1].onsubmit = function (e) {
             url
         );
     } else {
-        alert('¡Algun dato esta mal ingresado!');
         inValidInputs();
     }
 };

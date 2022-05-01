@@ -81,7 +81,15 @@ function validatePass(inputs) {
 }
 
 function myRequest(emailValue, passValue, url) {
-    fetch(url + '?email=' + emailValue + '&password=' + passValue)
+    fetch(url + '?email=' + emailValue + '&password=' + passValue, {
+        params: {
+            email: emailValue,
+            password: passValue,
+        },
+    })
+        .then(function (response) {
+            return response.json();
+        })
         .then(function (jsonResponse) {
             alert(jsonResponse.msg);
             if (jsonResponse.success) {
@@ -121,6 +129,14 @@ form[1].onsubmit = function (e) {
     e.preventDefault();
     if (validateMail(mail) && validatePass(pass)) {
         myRequest(mail.value, pass.value, url);
+    } else {
+        alert('Wrong email or password!');
+        mail.classList.add('blur');
+        mail.classList.remove('correct');
+        hideAlert[0].classList.add('error');
+        pass.classList.add('blur');
+        pass.classList.remove('correct');
+        hideAlert[1].classList.add('error');
     }
 };
 

@@ -69,10 +69,13 @@ h2{
 }
 .btn-sign{
     padding: 0.4rem 1.2rem;
+    margin-bottom: 0.4rem;
+    font-size: .8rem;
     background-color: #fff;
     border-radius: 8px;
     border: none;
     outline: 0.1rem solid #AACE9B;
+    text-transform: uppercase;
 }
 .btn-sign:hover{
     background-color: #F0F0F0;
