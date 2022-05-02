@@ -14,6 +14,34 @@ var validateValue = document.getElementsByClassName('inner-span');
 var validateForm = document.getElementsByClassName('hide-cartel');
 var form = document.getElementsByTagName('form');
 var closeModal = document.getElementById('close-modal');
+var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var alph = [
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'f',
+    'g',
+    'h',
+    'i',
+    'j',
+    'k',
+    'l',
+    'm',
+    'n',
+    'o',
+    'p',
+    'q',
+    'r',
+    's',
+    'u',
+    'v',
+    'w',
+    'x',
+    'y',
+    'z',
+];
 
 function myFocus(inputs, i) {
     inputs.classList.remove('blur');
@@ -67,7 +95,6 @@ function validateMail(inputs) {
 }
 
 function validateLetters(inputs, inputsLength) {
-    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var num = 0;
     var char = 0;
     for (i = 0; i < inputs.value.length; i++) {
@@ -85,7 +112,6 @@ function validateLetters(inputs, inputsLength) {
 }
 
 function validateDir(inputs, inputsLength) {
-    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var space = [' '];
     var num = 0;
     var spa = 0;
@@ -112,7 +138,6 @@ function validateDir(inputs, inputsLength) {
 }
 
 function validateNumbers(inputs, inputsLength) {
-    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var num = 0;
     var char = 0;
     for (i = 0; i < inputs.value.length; i++) {
@@ -130,7 +155,6 @@ function validateNumbers(inputs, inputsLength) {
 }
 
 function validateCp(inputs) {
-    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var num = 0;
     for (i = 0; i < inputs.value.length; i++) {
         if (numbers.includes(inputs.value[i])) {
@@ -145,7 +169,6 @@ function validateCp(inputs) {
 }
 
 function validateTel(inputs, inputsLength) {
-    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var num = 0;
     var char = 0;
     for (i = 0; i < inputs.value.length; i++) {
@@ -163,34 +186,6 @@ function validateTel(inputs, inputsLength) {
 }
 
 function validatePass(inputs, inputsLength) {
-    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    var alph = [
-        'a',
-        'b',
-        'c',
-        'd',
-        'e',
-        'f',
-        'g',
-        'h',
-        'i',
-        'j',
-        'k',
-        'l',
-        'm',
-        'n',
-        'o',
-        'p',
-        'q',
-        'r',
-        's',
-        'u',
-        'v',
-        'w',
-        'x',
-        'y',
-        'z',
-    ];
     var minValue = inputs.value.toLowerCase();
     var num = 0;
     var char = 0;
@@ -217,34 +212,6 @@ function validatePass(inputs, inputsLength) {
 }
 
 function validateLocal(inputs, inputsLength) {
-    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    var alph = [
-        'a',
-        'b',
-        'c',
-        'd',
-        'e',
-        'f',
-        'g',
-        'h',
-        'i',
-        'j',
-        'k',
-        'l',
-        'm',
-        'n',
-        'o',
-        'p',
-        'q',
-        'r',
-        's',
-        'u',
-        'v',
-        'w',
-        'x',
-        'y',
-        'z',
-    ];
     var minValue = inputs.value.toLowerCase();
     var num = 0;
     var char = 0;
@@ -258,7 +225,12 @@ function validateLocal(inputs, inputsLength) {
             special = true;
         }
     }
-    if (inputs.value.length >= inputsLength && num == 0 && char >= 3) {
+    if (
+        inputs.value.length >= inputsLength &&
+        num == 0 &&
+        char >= 3 &&
+        special == false
+    ) {
         return true;
     } else {
         return false;
@@ -273,13 +245,18 @@ function validateRePass(pass1, pass2) {
     }
 }
 
-function inValidInputs() {
+function alertInvalidInput() {
     for (i = 0; i < 11; i++) {
         hideAlert[i].classList.add('error');
     }
 }
+function clearInputs() {
+    for (i = 0; i < 11; i++) {
+        hideAlert[i].classList.remove('error');
+    }
+}
 
-function myRequest(
+function createUser(
     nameValue,
     lastNameValue,
     idValue,
@@ -319,7 +296,6 @@ function myRequest(
             return response.json();
         })
         .then(function (jsonResponse) {
-            console.log(jsonResponse);
             alert(jsonResponse.msg);
             if (jsonResponse.success) {
                 myStorage();
@@ -335,8 +311,9 @@ function myRequest(
                 validateValue[8].innerHTML = email.value;
                 validateValue[9].innerHTML = password.value;
                 validateValue[10].innerHTML = rePassword.value;
+                clearInputs();
             } else {
-                inValidInputs();
+                alertInvalidInput();
             }
         })
         .catch(function (error) {
@@ -358,29 +335,27 @@ function myStorage() {
 
 ////// EVENTS
 
-window.onload = function () {
-    if (
-        localStorage.getItem('name') != null &&
-        localStorage.getItem('lastName') != null &&
-        localStorage.getItem('dni') != null &&
-        localStorage.getItem('date') != null &&
-        localStorage.getItem('phone') != null &&
-        localStorage.getItem('address') != null &&
-        localStorage.getItem('city') != null &&
-        localStorage.getItem('zip') != null &&
-        localStorage.getItem('email') != null
-    ) {
-        firstName.value = localStorage.getItem('name');
-        surName.value = localStorage.getItem('lastName');
-        idNumber.value = localStorage.getItem('dni');
-        dateBirth.value = localStorage.getItem('date');
-        phone.value = localStorage.getItem('phone');
-        addressInput.value = localStorage.getItem('address');
-        local.value = localStorage.getItem('city');
-        zipCode.value = localStorage.getItem('zip');
-        email.value = localStorage.getItem('email');
-    }
-};
+if (
+    localStorage.getItem('name') != null &&
+    localStorage.getItem('lastName') != null &&
+    localStorage.getItem('dni') != null &&
+    localStorage.getItem('date') != null &&
+    localStorage.getItem('phone') != null &&
+    localStorage.getItem('address') != null &&
+    localStorage.getItem('city') != null &&
+    localStorage.getItem('zip') != null &&
+    localStorage.getItem('email') != null
+) {
+    firstName.value = localStorage.getItem('name');
+    surName.value = localStorage.getItem('lastName');
+    idNumber.value = localStorage.getItem('dni');
+    dateBirth.value = localStorage.getItem('date');
+    phone.value = localStorage.getItem('phone');
+    addressInput.value = localStorage.getItem('address');
+    local.value = localStorage.getItem('city');
+    zipCode.value = localStorage.getItem('zip');
+    email.value = localStorage.getItem('email');
+}
 firstName.onfocus = function () {
     myFocus(firstName, 0);
 };
@@ -477,7 +452,7 @@ form[1].onsubmit = function (e) {
         validatePass(password, 8) &&
         validateRePass(password, rePassword)
     ) {
-        myRequest(
+        createUser(
             firstName.value,
             surName.value,
             idNumber.value,
@@ -491,7 +466,7 @@ form[1].onsubmit = function (e) {
             url
         );
     } else {
-        inValidInputs();
+        alertInvalidInput();
     }
 };
 closeModal.onclick = function () {

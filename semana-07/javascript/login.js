@@ -80,7 +80,7 @@ function validatePass(inputs) {
     }
 }
 
-function myRequest(emailValue, passValue, url) {
+function validateUser(emailValue, passValue, url) {
     fetch(url + '?email=' + emailValue + '&password=' + passValue, {
         params: {
             email: emailValue,
@@ -128,9 +128,8 @@ form[1].onsubmit = function (e) {
     var url = 'https://basp-m2022-api-rest-server.herokuapp.com/login';
     e.preventDefault();
     if (validateMail(mail) && validatePass(pass)) {
-        myRequest(mail.value, pass.value, url);
+        validateUser(mail.value, pass.value, url);
     } else {
-        alert('Wrong email or password!');
         mail.classList.add('blur');
         mail.classList.remove('correct');
         hideAlert[0].classList.add('error');
