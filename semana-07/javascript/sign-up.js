@@ -13,7 +13,9 @@ var hideAlert = document.getElementsByClassName('error-text');
 var validateValue = document.getElementsByClassName('inner-span');
 var validateForm = document.getElementsByClassName('hide-cartel');
 var form = document.getElementsByTagName('form');
-var closeModal = document.getElementById('close-modal');
+var alertCartel = document.getElementsByClassName('inner-cartel');
+var closeModal = document.getElementsByClassName('close-modal');
+var invalidChars = ['-', '+', 'e', '.'];
 var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var alph = [
     'a',
@@ -43,11 +45,12 @@ var alph = [
     'z',
 ];
 
+////// FUNCTIONS
+
 function myFocus(inputs, i) {
     inputs.classList.remove('blur');
     hideAlert[i].classList.remove('error');
 }
-
 function myBlur(inputs, i, validation) {
     if (validation(inputs)) {
         inputs.classList.add('correct');
@@ -58,7 +61,6 @@ function myBlur(inputs, i, validation) {
         hideAlert[i].classList.add('error');
     }
 }
-
 function myBlurTwo(inputs, i, validation, inputsLength) {
     if (validation(inputs, inputsLength)) {
         inputs.classList.add('correct');
@@ -69,7 +71,6 @@ function myBlurTwo(inputs, i, validation, inputsLength) {
         hideAlert[i].classList.add('error');
     }
 }
-
 function validateDate(inputs) {
     var year = Number(inputs.value.split('-')[0]);
     var month = Number(inputs.value.split('-')[1]);
@@ -84,7 +85,6 @@ function validateDate(inputs) {
         return true;
     }
 }
-
 function validateMail(inputs) {
     var regexMail = /[a-z0-9]+@[a-z]+.[a-z]{2,3}/;
     if (regexMail.test(inputs.value)) {
@@ -93,7 +93,6 @@ function validateMail(inputs) {
         return false;
     }
 }
-
 function validateLetters(inputs, inputsLength) {
     var num = 0;
     var char = 0;
@@ -110,7 +109,6 @@ function validateLetters(inputs, inputsLength) {
         return false;
     }
 }
-
 function validateDir(inputs, inputsLength) {
     var space = [' '];
     var num = 0;
@@ -136,7 +134,6 @@ function validateDir(inputs, inputsLength) {
         return false;
     }
 }
-
 function validateNumbers(inputs, inputsLength) {
     var num = 0;
     var char = 0;
@@ -153,7 +150,6 @@ function validateNumbers(inputs, inputsLength) {
         return false;
     }
 }
-
 function validateCp(inputs) {
     var num = 0;
     for (i = 0; i < inputs.value.length; i++) {
@@ -167,7 +163,6 @@ function validateCp(inputs) {
         return false;
     }
 }
-
 function validateTel(inputs, inputsLength) {
     var num = 0;
     var char = 0;
@@ -184,7 +179,6 @@ function validateTel(inputs, inputsLength) {
         return false;
     }
 }
-
 function validatePass(inputs, inputsLength) {
     var minValue = inputs.value.toLowerCase();
     var num = 0;
@@ -210,7 +204,6 @@ function validatePass(inputs, inputsLength) {
         return false;
     }
 }
-
 function validateLocal(inputs, inputsLength) {
     var minValue = inputs.value.toLowerCase();
     var num = 0;
@@ -236,7 +229,6 @@ function validateLocal(inputs, inputsLength) {
         return false;
     }
 }
-
 function validateRePass(pass1, pass2) {
     if (pass1.value == pass2.value) {
         return true;
@@ -244,7 +236,6 @@ function validateRePass(pass1, pass2) {
         return false;
     }
 }
-
 function alertInvalidInput() {
     for (i = 0; i < 11; i++) {
         hideAlert[i].classList.add('error');
@@ -255,7 +246,6 @@ function clearInputs() {
         hideAlert[i].classList.remove('error');
     }
 }
-
 function createUser(
     nameValue,
     lastNameValue,
@@ -296,8 +286,9 @@ function createUser(
             return response.json();
         })
         .then(function (jsonResponse) {
-            alert(jsonResponse.msg);
             if (jsonResponse.success) {
+                validateForm[1].classList.add('cartel');
+                alertCartel[0].innerHTML = jsonResponse.msg;
                 myStorage();
                 validateForm[0].classList.add('cartel');
                 validateValue[0].innerHTML = firstName.value;
@@ -313,6 +304,8 @@ function createUser(
                 validateValue[10].innerHTML = rePassword.value;
                 clearInputs();
             } else {
+                validateForm[1].classList.add('cartel');
+                alertCartel[0].innerHTML = jsonResponse.errors[0].msg;
                 alertInvalidInput();
             }
         })
@@ -320,7 +313,6 @@ function createUser(
             console.log('Error', error);
         });
 }
-
 function myStorage() {
     localStorage.setItem('name', firstName.value);
     localStorage.setItem('lastName', surName.value);
@@ -356,6 +348,16 @@ if (
     zipCode.value = localStorage.getItem('zip');
     email.value = localStorage.getItem('email');
 }
+idNumber.addEventListener('keydown', function (e) {
+    if (invalidChars.includes(e.key)) {
+        e.preventDefault();
+    }
+});
+phone.addEventListener('keydown', function (e) {
+    if (invalidChars.includes(e.key)) {
+        e.preventDefault();
+    }
+});
 firstName.onfocus = function () {
     myFocus(firstName, 0);
 };
@@ -457,6 +459,7 @@ form[1].onsubmit = function (e) {
             surName.value,
             idNumber.value,
             newFormat,
+            // dateBirth.value,
             phone.value,
             addressInput.value,
             local.value,
@@ -466,9 +469,14 @@ form[1].onsubmit = function (e) {
             url
         );
     } else {
+        validateForm[1].classList.add('cartel');
+        alertCartel[0].innerHTML = 'Invalid inputs!';
         alertInvalidInput();
     }
 };
-closeModal.onclick = function () {
+closeModal[0].onclick = function () {
     validateForm[0].classList.remove('cartel');
+};
+closeModal[1].onclick = function () {
+    validateForm[1].classList.remove('cartel');
 };

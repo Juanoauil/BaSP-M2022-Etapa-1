@@ -4,7 +4,8 @@ var hideAlert = document.getElementsByClassName('error-text');
 var form = document.getElementsByTagName('form');
 var validateValue = document.getElementsByClassName('inner-span');
 var validateForm = document.getElementsByClassName('hide-cartel');
-var closeModal = document.getElementById('close-modal');
+var alertCartel = document.getElementsByClassName('inner-cartel');
+var closeModal = document.getElementsByClassName('close-modal');
 
 function myFocus(inputs, i) {
     inputs.classList.remove('blur');
@@ -91,7 +92,8 @@ function validateUser(emailValue, passValue, url) {
             return response.json();
         })
         .then(function (jsonResponse) {
-            alert(jsonResponse.msg);
+            validateForm[1].classList.add('cartel');
+            alertCartel[0].innerHTML = jsonResponse.msg;
             if (jsonResponse.success) {
                 validateForm[0].classList.add('cartel');
                 validateValue[0].innerHTML = mail.value;
@@ -130,6 +132,7 @@ form[1].onsubmit = function (e) {
     if (validateMail(mail) && validatePass(pass)) {
         validateUser(mail.value, pass.value, url);
     } else {
+        alert('Complete inputs!');
         mail.classList.add('blur');
         mail.classList.remove('correct');
         hideAlert[0].classList.add('error');
@@ -139,6 +142,9 @@ form[1].onsubmit = function (e) {
     }
 };
 
-closeModal.onclick = function () {
+closeModal[0].onclick = function () {
     validateForm[0].classList.remove('cartel');
+};
+closeModal[1].onclick = function () {
+    validateForm[1].classList.remove('cartel');
 };

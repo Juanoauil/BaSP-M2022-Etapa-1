@@ -142,6 +142,10 @@ h2{
 .correct{
     border: 2px solid #3BBA6C;
 }
+.inner-cartel{
+    font-family: Roboto;
+    font-size: 1rem;
+}
 
 @media (min-width: 768px){
     main form{
