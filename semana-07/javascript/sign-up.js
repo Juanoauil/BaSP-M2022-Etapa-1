@@ -259,6 +259,7 @@ function createUser(
     passValue,
     url
 ) {
+    var alerts = '';
     fetch(
         url +
             '?name=' +
@@ -304,8 +305,11 @@ function createUser(
                 validateValue[10].innerHTML = rePassword.value;
                 clearInputs();
             } else {
+                for (i = 0; i < jsonResponse.errors.length; i++) {
+                    alerts += jsonResponse.errors[i].msg + ' - ';
+                }
                 validateForm[1].classList.add('cartel');
-                alertCartel[0].innerHTML = jsonResponse.errors[0].msg;
+                alertCartel[0].innerHTML = alerts;
                 alertInvalidInput();
             }
         })
@@ -442,16 +446,16 @@ form[1].onsubmit = function (e) {
         formatDate.slice(0, 1);
     e.preventDefault();
     if (
-        validateLetters(firstName, 3) &&
-        validateLetters(surName, 3) &&
-        validateNumbers(idNumber, 7) &&
-        validateDate(dateBirth) &&
-        validateTel(phone, 10) &&
-        validateDir(addressInput, 5) &&
-        validateLocal(local, 3) &&
-        validateCp(zipCode) &&
-        validateMail(email) &&
-        validatePass(password, 8) &&
+        // validateLetters(firstName, 3) &&
+        // validateLetters(surName, 3) &&
+        // validateNumbers(idNumber, 7) &&
+        // validateDate(dateBirth) &&
+        // validateTel(phone, 10) &&
+        // validateDir(addressInput, 5) &&
+        // validateLocal(local, 3) &&
+        // validateCp(zipCode) &&
+        // validateMail(email) &&
+        // validatePass(password, 8) &&
         validateRePass(password, rePassword)
     ) {
         createUser(
@@ -459,7 +463,6 @@ form[1].onsubmit = function (e) {
             surName.value,
             idNumber.value,
             newFormat,
-            // dateBirth.value,
             phone.value,
             addressInput.value,
             local.value,
@@ -470,7 +473,7 @@ form[1].onsubmit = function (e) {
         );
     } else {
         validateForm[1].classList.add('cartel');
-        alertCartel[0].innerHTML = 'Invalid inputs!';
+        // alertCartel[0].innerHTML = 'Invalid inputs!';
         alertInvalidInput();
     }
 };
